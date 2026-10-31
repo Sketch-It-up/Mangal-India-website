@@ -1,3 +1,4 @@
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, BadgeCheck, CalendarCheck, Container as ContainerIcon, Globe, Sparkles, Sprout } from 'lucide-react'
 import HeroVisual from './HeroVisual'
 import Button from '@/components/ui/Button'
@@ -7,11 +8,17 @@ import { site } from '@/data/site'
 
 const trustIcons = [Globe, Sprout, BadgeCheck, CalendarCheck, ContainerIcon]
 
+// The two colour blobs drift at different speeds as the page scrolls, for a sense of depth.
 function Backdrop() {
+  const reduceMotion = useReducedMotion()
+  const { scrollY } = useScroll()
+  const leafY = useTransform(scrollY, [0, 700], [0, -90])
+  const goldY = useTransform(scrollY, [0, 700], [0, 70])
+
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-leaf-light/70 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-light/80 blur-3xl" />
+      <motion.div style={reduceMotion ? undefined : { y: leafY }} className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-leaf-light/70 blur-3xl" />
+      <motion.div style={reduceMotion ? undefined : { y: goldY }} className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-light/80 blur-3xl" />
       <svg className="absolute inset-0 h-full w-full opacity-[0.05]" preserveAspectRatio="none" viewBox="0 0 1200 800">
         {Array.from({ length: 9 }, (_, i) => (
           <path
