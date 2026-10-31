@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import ConsentBanner from './ConsentBanner'
+import ScrollProgress from './ScrollProgress'
 import SmoothScroll from './SmoothScroll'
 import { trackPageView } from '@/lib/analytics'
 import { getLenis } from '@/lib/smoothScroll'
@@ -27,6 +28,7 @@ export default function Layout() {
         Skip to content
       </a>
       <SmoothScroll />
+      <ScrollProgress />
       <RouteEffects />
       <Header />
       <main id="main" className="flex-1">
