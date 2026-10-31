@@ -17,12 +17,12 @@ import { allProducts } from '@/data/products'
 import { stats } from '@/data/site'
 
 const palette = [
-  { name: 'Forest Green', hex: '#1E4D2B', className: 'bg-forest', use: 'Buttons, headings, dark bands, map' },
+  { name: 'Forest Green', hex: '#1E4D2B', className: 'bg-forest', use: 'Buttons, headings, dark bands, India on the map' },
   { name: 'Leaf Green', hex: '#8BC34A', className: 'bg-leaf', use: 'Fresh-fruit highlights, icons on dark' },
   { name: 'Sage', hex: '#EEF2E6', className: 'bg-sage ring-1 ring-inset ring-forest/10', use: 'Alternating light sections' },
   { name: 'Tangerine', hex: '#F28C28', className: 'bg-tangerine', use: 'Dry-fruit highlights' },
   { name: 'Dubai Gold', hex: '#F5B83D', className: 'bg-gold', use: 'Export highlights, CTAs on dark' },
-  { name: 'Pomegranate Red', hex: '#C62839', className: 'bg-pomegranate', use: 'India on the map, small accents' },
+  { name: 'Pomegranate Red', hex: '#C62839', className: 'bg-pomegranate', use: 'Small accents' },
   { name: 'Warm Cream', hex: '#FBF8F1', className: 'bg-cream ring-1 ring-inset ring-forest/10', use: 'Page background' },
   { name: 'Ink', hex: '#18231C', className: 'bg-ink', use: 'Body copy' },
 ]

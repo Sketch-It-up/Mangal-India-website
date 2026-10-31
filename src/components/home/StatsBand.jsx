@@ -44,12 +44,12 @@ export default function StatsBand({ heading = statsHeading }) {
                     i < stats.length - 1 && 'lg:pr-6',
                   )}
                 >
-                  <dt className="order-2 mt-2 text-sm font-semibold text-white">{stat.label}</dt>
-                  <dd className="order-1 flex items-center gap-3 lg:flex-col lg:items-start">
+                  <dt className="order-2 mt-3 text-sm font-semibold text-white">{stat.label}</dt>
+                  <dd className="order-1 flex items-center gap-3 lg:flex-col lg:items-start lg:gap-4">
                     <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-leaf sm:flex">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
-                    <Counter value={stat.value} suffix={stat.suffix} className="font-display text-[44px] font-bold leading-none sm:text-5xl xl:text-stat" />
+                    <Counter value={stat.value} suffix={stat.suffix} className="font-display text-4xl font-bold leading-none tracking-tight sm:text-[2.5rem] xl:text-[3.25rem]" />
                   </dd>
                   <dd className="order-3 mt-1 text-sm leading-relaxed text-white/65">{stat.line}</dd>
                 </Reveal>

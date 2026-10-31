@@ -1,8 +1,11 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/cn'
+import { useMagnet } from '@/lib/useMagnet'
 
 // Section 12 button spec (48px high, 6px radius, 2px hover lift) in the green theme.
 // `accent` (gold) is the primary action on dark green bands.
+// Solid buttons (primary and accent) lean slightly toward the mouse; pass `magnetic={false}` to opt out.
 const base =
   'inline-flex items-center justify-center gap-2 rounded-btn font-semibold transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
 
@@ -28,10 +31,13 @@ export default function Button({
   size = 'md',
   icon: Icon,
   iconPosition = 'right',
+  magnetic = variant === 'primary' || variant === 'accent',
   className,
   children,
   ...props
 }) {
+  const ref = useRef(null)
+  useMagnet(ref, { enabled: magnetic })
   const classes = cn(base, variants[variant], sizes[size], className)
   const icon = Icon && <Icon aria-hidden="true" className="h-4 w-4 shrink-0" />
   const content = (
@@ -44,20 +50,20 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link ref={ref} to={to} className={classes} {...props}>
         {content}
       </Link>
     )
   }
   if (href) {
     return (
-      <a href={href} className={classes} {...props}>
+      <a ref={ref} href={href} className={classes} {...props}>
         {content}
       </a>
     )
   }
   return (
-    <button type="button" className={classes} {...props}>
+    <button ref={ref} type="button" className={classes} {...props}>
       {content}
     </button>
   )

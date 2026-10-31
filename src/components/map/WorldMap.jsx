@@ -8,16 +8,10 @@ import { cn } from '@/lib/cn'
 import { arcBetween, indiaFeature, useWorldFeatures } from '@/lib/geo'
 import { continentCount, india, sourceLabel, sourcingCountries } from '@/data/countries'
 import { customerCities, wholesaleOutlets } from '@/data/network'
+import { mapColors } from './palette'
 
 const WIDTH = 1000
-const COLORS = {
-  fresh: '#8BC34A',
-  dry: '#F28C28',
-  india: '#C62839',
-  gold: '#F5B83D',
-  land: '#1D4A2B',
-  border: '#0F2E19',
-}
+const COLORS = mapColors
 
 const countryByIso = Object.fromEntries(sourcingCountries.map((c) => [c.isoNumeric, c]))
 const dubai = sourcingCountries.find((c) => c.id === 'uae')
@@ -114,11 +108,11 @@ export default function WorldMap({ className }) {
   })
 
   return (
-    <div ref={wrapperRef} className={cn('relative overflow-hidden rounded-3xl border border-white/10 bg-forest-900', className)}>
+    <div ref={wrapperRef} className={cn('relative overflow-hidden rounded-3xl border border-forest/10 bg-cream-light shadow-card', className)}>
       <div ref={scrollRef} className="overflow-x-auto overscroll-x-contain [scrollbar-width:thin]">
         <div className="relative min-w-[760px]">
           {!geo ? (
-            <div className="aspect-[2/1] w-full animate-pulse bg-forest/40" aria-label="Loading map" />
+            <div className="aspect-[2/1] w-full animate-pulse bg-sage-dark/60" aria-label="Loading map" />
           ) : (
             <svg
               viewBox={`0 0 ${WIDTH} ${geo.height}`}
@@ -152,7 +146,7 @@ export default function WorldMap({ className }) {
                   transition: 'transform 900ms cubic-bezier(0.16, 1, 0.3, 1)',
                 }}
               >
-                <path d={geo.graticule} fill="none" stroke="#fff" strokeOpacity="0.06" strokeWidth={0.6 / k} />
+                <path d={geo.graticule} fill="none" stroke={COLORS.india} strokeOpacity="0.07" strokeWidth={0.6 / k} />
 
                 {geo.shapes.map((shape) =>
                   shape.country ? (
@@ -160,7 +154,7 @@ export default function WorldMap({ className }) {
                       key={shape.id}
                       d={shape.d}
                       fill={fillFor(shape.country)}
-                      stroke={COLORS.border}
+                      stroke={COLORS.ocean}
                       strokeWidth={0.6 / k}
                       tabIndex={zoomed ? -1 : 0}
                       role="button"
@@ -173,16 +167,16 @@ export default function WorldMap({ className }) {
                       {...countryHandlers(shape.country.id)}
                     />
                   ) : (
-                    <path key={shape.id} d={shape.d} fill={COLORS.land} stroke={COLORS.border} strokeWidth={0.5 / k} />
+                    <path key={shape.id} d={shape.d} fill={COLORS.land} stroke={COLORS.landBorder} strokeWidth={0.5 / k} />
                   ),
                 )}
 
                 <path
                   d={geo.india}
                   fill={COLORS.india}
-                  stroke="#FF8A95"
-                  strokeOpacity="0.5"
-                  strokeWidth={0.8 / k}
+                  stroke={COLORS.indiaRing}
+                  strokeOpacity="0.9"
+                  strokeWidth={1.2 / k}
                   filter={`url(#${glowId})`}
                   tabIndex={0}
                   role="button"
@@ -216,13 +210,13 @@ export default function WorldMap({ className }) {
                         <motion.path
                           d={d}
                           fill="none"
-                          stroke="#fff"
+                          stroke={COLORS.ink}
                           strokeWidth="1.2"
                           strokeLinecap="round"
                           strokeDasharray="2 10"
                           className="animate-dash-flow"
                           initial={reduceMotion ? false : { opacity: 0 }}
-                          animate={drawn ? { opacity: 0.55 } : undefined}
+                          animate={drawn ? { opacity: 0.45 } : undefined}
                           transition={{ duration: 0.6, delay: arcTransition(i).delay + 1 }}
                         />
                         <circle cx={geo.anchors[country.id][0]} cy={geo.anchors[country.id][1]} r="2.2" fill="#fff" opacity="0.9" />
@@ -254,8 +248,8 @@ export default function WorldMap({ className }) {
                   {...countryHandlers('uae')}
                 >
                   <circle r="7" fill="none" stroke={COLORS.gold} strokeWidth="1.5" className="origin-center animate-pulse-ring [transform-box:fill-box]" />
-                  <circle r="6" fill={COLORS.border} stroke={COLORS.gold} strokeWidth="2.5" />
-                  <circle r="2.2" fill={COLORS.gold} />
+                  <circle r="6" fill={COLORS.ink} stroke={COLORS.gold} strokeWidth="2.5" />
+                  <circle r="2.2" fill={COLORS.indiaRing} />
                 </g>
 
                 {/* India network: outlet dots and customer-city rings */}
@@ -269,6 +263,10 @@ export default function WorldMap({ className }) {
                         textAnchor={city.label.anchor}
                         fontSize={10 / k}
                         fill="#fff"
+                        stroke={COLORS.ink}
+                        strokeWidth={3 / k}
+                        strokeLinejoin="round"
+                        paintOrder="stroke"
                         className={cn('font-sans transition-opacity duration-300', zoomed ? 'opacity-90 delay-500' : 'opacity-0')}
                       >
                         {city.name}
@@ -277,7 +275,7 @@ export default function WorldMap({ className }) {
                   ))}
                   {geo.outlets.map((city) => (
                     <g key={city.id} transform={`translate(${city.point[0]} ${city.point[1]})`}>
-                      <circle r={zoomed ? 5 / k : 1.8} fill={COLORS.gold} stroke={COLORS.border} strokeWidth={zoomed ? 1.2 / k : 0.4} />
+                      <circle r={zoomed ? 5 / k : 1.8} fill={COLORS.indiaRing} stroke={COLORS.ink} strokeWidth={zoomed ? 1.2 / k : 0.4} />
                       <text
                         x={(city.label.dx * 0.8) / k}
                         y={(city.label.dy * 0.8) / k}
@@ -285,6 +283,10 @@ export default function WorldMap({ className }) {
                         fontSize={11 / k}
                         fontWeight="700"
                         fill="#fff"
+                        stroke={COLORS.ink}
+                        strokeWidth={3.5 / k}
+                        strokeLinejoin="round"
+                        paintOrder="stroke"
                         className={cn('font-sans transition-opacity duration-300', zoomed ? 'opacity-100 delay-500' : 'opacity-0')}
                       >
                         {city.name}
@@ -313,7 +315,7 @@ export default function WorldMap({ className }) {
               {/* Positioning lives on the outer div: framer's inline transform would override translate classes. */}
               <div className="absolute -translate-x-full translate-y-6 pr-4" style={pct(geo.outbound.mid)}>
                 <motion.span
-                  className="block whitespace-nowrap rounded-lg border border-gold/50 bg-forest-900/90 px-2.5 py-1.5 text-[11px] font-medium text-gold backdrop-blur"
+                  className="block whitespace-nowrap rounded-lg border border-gold/60 bg-white/90 px-2.5 py-1.5 text-[11px] font-medium text-gold-dark shadow-card backdrop-blur"
                   initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                   animate={drawn ? { opacity: 1, y: 0 } : undefined}
                   transition={{ delay: outboundDelay + 0.6 }}
@@ -337,7 +339,7 @@ export default function WorldMap({ className }) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.15 }}
               >
-                <div className="-translate-x-1/2 -translate-y-[calc(100%+14px)] whitespace-nowrap rounded-xl bg-white px-3.5 py-2.5 text-left shadow-lift">
+                <div className="-translate-x-1/2 -translate-y-[calc(100%+14px)] whitespace-nowrap rounded-xl border border-forest/10 bg-white px-3.5 py-2.5 text-left shadow-lift">
                   <p className="font-display text-base font-semibold text-forest">{activeCountry.name}</p>
                   <p className="text-xs font-medium text-ink-muted">{sourceLabel(activeCountry)}</p>
                   {activeCountry.role && <p className="mt-0.5 text-xs font-semibold text-gold-dark">{activeCountry.role}</p>}
@@ -349,16 +351,16 @@ export default function WorldMap({ className }) {
       </div>
 
       {/* Counter overlay (top-left) */}
-      <div className="pointer-events-none absolute left-4 top-4 rounded-2xl border border-white/10 bg-forest/80 px-4 py-3 text-white shadow-lift backdrop-blur-md sm:left-6 sm:top-6">
+      <div className="pointer-events-none absolute left-4 top-4 rounded-2xl border border-forest/10 bg-white/90 px-4 py-3 text-forest shadow-lift backdrop-blur-md sm:left-6 sm:top-6">
         {zoomed ? (
           <p className="text-sm font-semibold">
-            <span className="font-display text-2xl font-bold text-gold">4</span> outlets ·{' '}
-            <span className="font-display text-2xl font-bold text-gold">10+</span> distribution centres
+            <span className="font-display text-2xl font-bold text-leaf-dark">4</span> outlets ·{' '}
+            <span className="font-display text-2xl font-bold text-leaf-dark">10+</span> distribution centres
           </p>
         ) : (
           <p className="text-sm font-semibold">
-            <Counter value={sourcingCountries.length} className="font-display text-2xl font-bold text-gold" /> countries ·{' '}
-            <Counter value={continentCount} className="font-display text-2xl font-bold text-gold" /> continents
+            <Counter value={sourcingCountries.length} className="font-display text-2xl font-bold text-leaf-dark" /> countries ·{' '}
+            <Counter value={continentCount} className="font-display text-2xl font-bold text-leaf-dark" /> continents
           </p>
         )}
       </div>
@@ -367,7 +369,7 @@ export default function WorldMap({ className }) {
         <button
           type="button"
           onClick={toggleZoom}
-          className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-forest shadow-lift transition hover:bg-gold sm:right-6 sm:top-6"
+          className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-forest px-4 py-2 text-sm font-semibold text-white shadow-lift transition hover:bg-forest-dark sm:right-6 sm:top-6"
         >
           <ZoomOut aria-hidden="true" className="h-4 w-4" />
           Back to world view
@@ -375,9 +377,9 @@ export default function WorldMap({ className }) {
       )}
 
       {/* Legend bar */}
-      <div className="flex flex-col gap-3 border-t border-white/10 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col gap-3 border-t border-forest/10 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
         <MapLegend />
-        <p className="flex shrink-0 items-center gap-2 text-xs text-white/55">
+        <p className="flex shrink-0 items-center gap-2 text-xs text-ink-muted">
           <MousePointerClick aria-hidden="true" className="hidden h-4 w-4 sm:block" />
           <Hand aria-hidden="true" className="h-4 w-4 sm:hidden" />
           <span className="sm:hidden">Swipe to explore · tap a country · tap India to zoom</span>
