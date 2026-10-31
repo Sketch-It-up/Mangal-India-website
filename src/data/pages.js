@@ -101,7 +101,7 @@ export const globalNetworkPage = {
       { key: 'fresh', label: 'Green', text: 'fresh-fruit sourcing country' },
       { key: 'dry', label: 'Orange', text: 'dry-fruit sourcing country' },
       { key: 'both', label: 'Green and orange', text: 'both (Chile)' },
-      { key: 'india', label: 'Red', text: 'India, our home market' },
+      { key: 'india', label: 'Dark green with a gold outline', text: 'India, our home market' },
       { key: 'dubai', label: 'Gold ring', text: 'Dubai: sourcing hub and first export destination' },
       { key: 'arcs', label: 'Animated arcs', text: 'trade flowing into India, and premium Indian produce flowing out to Dubai' },
     ],

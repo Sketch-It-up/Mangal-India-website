@@ -16,14 +16,14 @@ import { site } from '@/data/site'
 const route = routeByPath['/global-network/']
 
 const swatches = {
-  fresh: <span className="h-5 w-5 rounded-md bg-leaf" />,
+  fresh: <span className="h-5 w-5 rounded-md bg-leaf-dark" />,
   dry: <span className="h-5 w-5 rounded-md bg-tangerine" />,
-  both: <span className="h-5 w-5 rounded-md bg-[linear-gradient(180deg,#8BC34A_50%,#F28C28_50%)]" />,
-  india: <span className="h-5 w-5 rounded-md bg-pomegranate" />,
-  dubai: <span className="h-5 w-5 rounded-full border-[3px] border-gold" />,
+  both: <span className="h-5 w-5 rounded-md bg-[linear-gradient(180deg,#3E7B22_50%,#F28C28_50%)]" />,
+  india: <span className="h-5 w-5 rounded-md bg-forest ring-2 ring-gold" />,
+  dubai: <span className="h-5 w-5 rounded-full border-[3px] border-[#D4930D]" />,
   arcs: (
     <svg viewBox="0 0 24 24" className="h-5 w-5">
-      <path d="M2 18Q12 2 22 14" fill="none" stroke="#8BC34A" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
+      <path d="M2 18Q12 2 22 14" fill="none" stroke="#3E7B22" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
     </svg>
   ),
 }
@@ -47,7 +47,7 @@ export default function GlobalNetworkPage() {
         ctas={[globalNetworkPage.cta, globalNetworkPage.secondaryCta]}
         tight
       />
-      <section className="bg-forest pb-20 lg:pb-24">
+      <section className="bg-sage pb-20 pt-12 lg:pb-24">
         <Container>
           <Reveal y={16}>
             <WorldMap />
@@ -101,7 +101,7 @@ export default function GlobalNetworkPage() {
                 to="/global-network/india-distribution/"
                 className="group flex h-full flex-col rounded-[1.75rem] bg-white p-8 shadow-card transition hover:-translate-y-1 hover:shadow-lift"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-pomegranate-light text-pomegranate">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage text-forest">
                   <MapPinned aria-hidden="true" className="h-6 w-6" />
                 </span>
                 <p className="mt-6 flex-1 text-[17px] leading-relaxed text-ink">{supply.india}</p>
