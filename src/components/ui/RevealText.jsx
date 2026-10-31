@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 const word = {
   hidden: { y: '115%' },
-  shown: { y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+  shown: { y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
 }
 
 // Slides a heading up word by word the first time it scrolls into view.
@@ -22,8 +22,9 @@ export default function RevealText({ text, delay = 0 }) {
         className="block"
         initial="hidden"
         whileInView="shown"
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ staggerChildren: 0.05, delayChildren: delay }}
+        // Starts once the heading is a third of the way up the screen, so it plays where you are looking.
+        viewport={{ once: true, margin: '0px 0px -33% 0px' }}
+        transition={{ staggerChildren: 0.09, delayChildren: delay + 0.1 }}
       >
         {words.map((value, i) => (
           <Fragment key={i}>
