@@ -27,11 +27,11 @@ export default function HomePage() {
       <HeroSection />
       <StatsBand />
       <ImportExportSplit />
+      <FounderFeature />
       <WorldMapSection />
       <ProductPortfolio />
       <IndiaNetworkSection />
       <WhyMangalSection />
-      <FounderFeature />
       <ExportsDubaiSection />
       <HowWeTrade />
       <PathwaysSection />
