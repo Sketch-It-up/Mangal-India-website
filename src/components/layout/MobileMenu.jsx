@@ -5,6 +5,7 @@ import { ArrowRight, ChevronDown, X } from 'lucide-react'
 import Logo from './Logo'
 import Button from '@/components/ui/Button'
 import { cn } from '@/lib/cn'
+import { getLenis } from '@/lib/smoothScroll'
 import { enquiryCta, primaryNav } from '@/data/nav'
 
 // Section 4: on mobile the enquiry button lives in the menu sheet, pinned to its bottom.
@@ -16,11 +17,13 @@ export default function MobileMenu({ open, onClose }) {
     if (!open) return
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    getLenis()?.stop()
     closeRef.current?.focus()
     const onKeyDown = (event) => event.key === 'Escape' && onClose()
     document.addEventListener('keydown', onKeyDown)
     return () => {
       document.body.style.overflow = previousOverflow
+      getLenis()?.start()
       document.removeEventListener('keydown', onKeyDown)
     }
   }, [open, onClose])
@@ -60,7 +63,7 @@ export default function MobileMenu({ open, onClose }) {
               </button>
             </div>
 
-            <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-4 py-4 sm:px-6">
+            <nav aria-label="Mobile" data-lenis-prevent className="flex-1 overflow-y-auto px-4 py-4 sm:px-6">
               <ul className="space-y-1">
                 {primaryNav.map((group) => {
                   const isOpen = expanded === group.label

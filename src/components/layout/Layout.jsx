@@ -3,13 +3,18 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import ConsentBanner from './ConsentBanner'
+import SmoothScroll from './SmoothScroll'
 import { trackPageView } from '@/lib/analytics'
+import { getLenis } from '@/lib/smoothScroll'
 
 // Per-navigation effects: scroll to top (unless jumping to an anchor) and record a page view.
 function RouteEffects() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    if (!hash) window.scrollTo({ top: 0, behavior: 'instant' })
+    if (hash) return
+    const lenis = getLenis()
+    if (lenis) lenis.scrollTo(0, { immediate: true })
+    else window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname, hash])
   useEffect(() => trackPageView(pathname), [pathname])
   return null
@@ -21,6 +26,7 @@ export default function Layout() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
+      <SmoothScroll />
       <RouteEffects />
       <Header />
       <main id="main" className="flex-1">
