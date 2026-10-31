@@ -1,3 +1,4 @@
+import RevealText from './RevealText'
 import { cn } from '@/lib/cn'
 
 // Section title block. `accent` is the italic serif kicker above the title
@@ -42,7 +43,7 @@ export default function SectionHeading({
             {accent}
           </span>
         )}
-        {title}
+        {typeof title === 'string' ? <RevealText text={title} /> : title}
       </Tag>
       {intro && (
         <p className={cn('mt-4 text-[17px] leading-relaxed', dark ? 'text-white/75' : 'text-ink-muted')}>{intro}</p>

@@ -2,7 +2,8 @@
 
 // Green brand theme (client direction), built on the Section 12 structure:
 // forest replaces Midnight Navy, leaf replaces Aqua Teal; tangerine, gold and
-// pomegranate keep their roles (dry fruit, Dubai/export, India on the map).
+// pomegranate keep their roles (dry fruit, Dubai/export, small accents). India on the
+// map is forest with a gold outline.
 // "dark" shades are the AA-contrast versions for text on light backgrounds.
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
@@ -12,8 +13,8 @@ export default {
         forest: {
           DEFAULT: '#1E4D2B', // primary: buttons, bands, headings
           dark: '#163B21',
-          900: '#0F2E19', // map canvas
-          800: '#1D4A2B', // map land on canvas
+          900: '#0F2E19',
+          800: '#1D4A2B',
           600: '#3A6B47',
           100: '#E3EDE2',
         },
@@ -27,7 +28,7 @@ export default {
           dark: '#DFE7D2',
         },
         pomegranate: {
-          DEFAULT: '#C62839', // India on the map, small accents
+          DEFAULT: '#C62839', // small accents
           dark: '#A51F2F',
           light: '#FBE7E9',
         },
@@ -76,6 +77,9 @@ export default {
         'dash-flow': {
           to: { strokeDashoffset: '-24' },
         },
+        marquee: {
+          to: { transform: 'translateX(-50%)' },
+        },
         'pulse-ring': {
           '0%': { transform: 'scale(0.6)', opacity: '0.9' },
           '100%': { transform: 'scale(2.4)', opacity: '0' },
@@ -85,6 +89,7 @@ export default {
         float: 'float 6s ease-in-out infinite',
         'dash-flow': 'dash-flow 1.6s linear infinite',
         'pulse-ring': 'pulse-ring 2.4s ease-out infinite',
+        marquee: 'marquee 50s linear infinite',
       },
     },
   },

@@ -1,5 +1,6 @@
 import JsonLd from '@/components/seo/JsonLd'
 import Seo from '@/components/seo/Seo'
+import CountryMarquee from '@/components/home/CountryMarquee'
 import ExportsDubaiSection from '@/components/home/ExportsDubaiSection'
 import FinalCta from '@/components/home/FinalCta'
 import FounderFeature from '@/components/home/FounderFeature'
@@ -27,11 +28,12 @@ export default function HomePage() {
       <HeroSection />
       <StatsBand />
       <ImportExportSplit />
+      <FounderFeature />
       <WorldMapSection />
+      <CountryMarquee />
       <ProductPortfolio />
       <IndiaNetworkSection />
       <WhyMangalSection />
-      <FounderFeature />
       <ExportsDubaiSection />
       <HowWeTrade />
       <PathwaysSection />
