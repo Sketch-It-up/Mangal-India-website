@@ -77,6 +77,9 @@ export default {
         'dash-flow': {
           to: { strokeDashoffset: '-24' },
         },
+        marquee: {
+          to: { transform: 'translateX(-50%)' },
+        },
         'pulse-ring': {
           '0%': { transform: 'scale(0.6)', opacity: '0.9' },
           '100%': { transform: 'scale(2.4)', opacity: '0' },
@@ -86,6 +89,7 @@ export default {
         float: 'float 6s ease-in-out infinite',
         'dash-flow': 'dash-flow 1.6s linear infinite',
         'pulse-ring': 'pulse-ring 2.4s ease-out infinite',
+        marquee: 'marquee 50s linear infinite',
       },
     },
   },
