@@ -1,5 +1,6 @@
 import { forms } from '@/data/forms'
 import { trackEvent } from './analytics'
+import { emailjsConfigured, sendViaEmailJs } from './emailjs'
 
 // Where enquiries are sent. Defaults to the bundled serverless endpoint (api/enquiry.js);
 // set VITE_ENQUIRY_ENDPOINT to use another backend or form service.
@@ -12,7 +13,11 @@ const simulate = import.meta.env.DEV && !import.meta.env.VITE_ENQUIRY_ENDPOINT
 export async function submitEnquiry(type, values) {
   const payload = { type, ...values, page: window.location.pathname }
 
-  if (simulate) {
+  if (emailjsConfigured) {
+    // Demo mode: email the owner straight from the browser. Remove the VITE_EMAILJS_* variables
+    // to go back to the /api/enquiry backend.
+    await sendViaEmailJs(type, payload)
+  } else if (simulate) {
     console.info('[enquiry] development mode, not sent:', payload)
     await new Promise((resolve) => setTimeout(resolve, 600))
   } else {
