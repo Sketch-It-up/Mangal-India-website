@@ -19,16 +19,17 @@ import { routeByPath } from '@/data/routes'
 
 const route = routeByPath['/']
 
-// Homepage sections in the publication order of Section 5.
+// Homepage sections, based on the publication order of Section 5. The founder feature
+// sits third, straight after the numbers strip, at the client's request.
 export default function HomePage() {
   return (
     <>
       <Seo title={route.title} description={route.description} path={route.path} />
       <JsonLd data={[organizationSchema(), websiteSchema()]} />
       <HeroSection />
-      <StatsBand />
-      <ImportExportSplit />
+      <StatsBand bridge="bg-white" />
       <FounderFeature />
+      <ImportExportSplit />
       <WorldMapSection />
       <CountryMarquee />
       <ProductPortfolio />
