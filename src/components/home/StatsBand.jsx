@@ -10,10 +10,13 @@ const icons = [CalendarCheck, ContainerIcon, Cherry, Globe, Warehouse]
 
 // Section 2 — numbers strip, overlapping the bottom edge of the hero.
 // Inner pages pass `heading={null}`: the numbers show without the homepage heading row.
-export default function StatsBand({ heading = statsHeading }) {
+// `bridge` is the background of the section that follows (e.g. 'bg-white'): it fills the
+// lower half behind the card, so the card straddles both sections instead of ending on a seam.
+export default function StatsBand({ heading = statsHeading, bridge }) {
   return (
     <section aria-labelledby="stats-heading" className="relative z-10 -mt-20 lg:-mt-24">
-      <Container>
+      {bridge && <div aria-hidden="true" className={cn('absolute inset-x-0 bottom-0 top-1/2', bridge)} />}
+      <Container className="relative">
         <div className="relative overflow-hidden rounded-[28px] bg-forest px-6 py-10 text-white shadow-lift sm:px-10 lg:px-12 lg:py-12">
           <svg aria-hidden="true" className="absolute -right-10 -top-10 h-64 w-64 text-white/[0.04]" viewBox="0 0 100 100">
             <path d="M50 5C75 20 90 45 85 70 75 90 50 95 30 85 10 70 15 40 50 5z" fill="currentColor" />

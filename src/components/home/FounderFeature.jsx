@@ -11,7 +11,7 @@ import { founderFeature } from '@/data/home'
 // The portrait is expected to be a background-removed PNG, so it stands on a backdrop instead of in a framed box.
 export default function FounderFeature() {
   return (
-    <section className="bg-white py-24 lg:py-28">
+    <section className="bg-white pb-24 pt-14 lg:pb-28 lg:pt-16">
       <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="relative mx-auto aspect-[4/5] w-full max-w-sm lg:order-2 lg:col-span-5 lg:max-w-md">
           {/* Stage for a background-removed portrait: a soft circle sits behind the founder, whose head breaks out above it. */}
