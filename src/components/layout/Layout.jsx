@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header'
+import TopBar from './TopBar'
 import Footer from './Footer'
 import ConsentBanner from './ConsentBanner'
 import ScrollProgress from './ScrollProgress'
@@ -30,6 +31,7 @@ export default function Layout() {
       <SmoothScroll />
       <ScrollProgress />
       <RouteEffects />
+      <TopBar />
       <Header />
       <main id="main" className="flex-1">
         {/* Pages are lazy-loaded (App.jsx); keep the space while one loads. */}

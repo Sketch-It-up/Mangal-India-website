@@ -19,8 +19,10 @@ export const site = {
   },
 
   contact: {
-    email: null, // [CONFIRM: official email]
-    phone: null, // [CONFIRM: phone / WhatsApp]
+    email: 'mangal.india@gmail.com',
+    phone: '+91 7385820580',
+    location: 'Mumbai, India', // city shown in the top bar; not the registered address
+    hours: 'Mon - Sat: 08:00 AM - 08:00 PM (Wholesale Operations)',
     address: null, // [CONFIRM: registered office address]
     privacyEmail: null, // [CONFIRM: privacy email]
   },
