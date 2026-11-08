@@ -41,9 +41,13 @@ export default function ExportsPage() {
                   to={item.to}
                   className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-card transition hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <div className="relative flex aspect-[4/3] items-center justify-center bg-gold-light">
-                    <span aria-hidden="true" className="absolute aspect-square h-[80%] rounded-full bg-white/70" />
-                    <ProduceArt type={item.slug} className="relative h-[62%] w-[62%] transition-transform duration-500 group-hover:scale-110" />
+                  <div className="aspect-[4/3] overflow-hidden bg-white">
+                    <img
+                      src={`/images/products/${item.slug}.jpg`}
+                      alt=""
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-display text-2xl font-semibold text-forest">{item.title}</h3>

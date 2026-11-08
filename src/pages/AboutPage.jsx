@@ -162,7 +162,7 @@ export default function AboutPage() {
       <section className="bg-sage py-24 lg:py-28">
         <Container>
           <Reveal className="grid items-center gap-10 overflow-hidden rounded-[2rem] bg-white p-6 shadow-card sm:p-10 md:grid-cols-[minmax(0,280px)_1fr] lg:gap-14 lg:p-12">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest">
               {founder.portrait ? (
                 <img src={founder.portrait} alt={`Portrait of ${founder.name}, ${founder.title} of Mangal India.`} className="h-full w-full object-cover" />
               ) : (
@@ -180,6 +180,19 @@ export default function AboutPage() {
               <Button to={aboutPage.leadership.cta.to} icon={ArrowRight} className="mt-8">
                 {aboutPage.leadership.cta.label}
               </Button>
+            </div>
+          </Reveal>
+
+          {/* COO: mirrors the CEO card, portrait on the right from md up */}
+          <Reveal className="mt-8 grid items-center gap-10 overflow-hidden rounded-[2rem] bg-white p-6 shadow-card sm:p-10 md:grid-cols-[1fr_minmax(0,280px)] lg:mt-10 lg:gap-14 lg:p-12">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest md:order-last">
+              <img src={aboutPage.coo.portrait} alt={`Portrait of ${aboutPage.coo.name}, ${aboutPage.coo.title} of Mangal India.`} className="h-full w-full object-cover" />
+            </div>
+            <div>
+              <SectionHeading eyebrow="Operations" title={aboutPage.coo.heading} />
+              <p className="mt-5 text-[17px] leading-relaxed text-ink-muted">{aboutPage.coo.text}</p>
+              <p className="mt-6 font-display text-xl font-semibold text-forest">{aboutPage.coo.name}</p>
+              <p className="text-sm text-ink-muted">{aboutPage.coo.title}</p>
             </div>
           </Reveal>
         </Container>

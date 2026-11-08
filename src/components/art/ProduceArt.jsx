@@ -1,5 +1,12 @@
-// Flat produce illustrations (viewBox 120×120) used until real photography arrives.
-// One per product slug, plus the export range (rice, mangoes, vegetables).
+// Produce art, one per product slug plus the export range (rice, mangoes, vegetables).
+// A transparent photo cut-out (public/images/products/cutouts) is shown where one exists;
+// the flat illustrations below (viewBox 120×120) fill in for the rest.
+import { cn } from '@/lib/cn'
+
+const cutouts = new Set([
+  'apples', 'oranges', 'mandarins', 'kiwi', 'dragon-fruit', 'pears', 'cherries', 'plums', 'nectarines',
+  'dates', 'pistachios', 'almonds', 'walnuts', 'rice', 'mangoes',
+])
 
 const BROWN = '#6B4423'
 const LEAF = '#6BAA3C'
@@ -339,6 +346,22 @@ const arts = {
 }
 
 export default function ProduceArt({ type, title, className }) {
+  if (cutouts.has(type)) {
+    return (
+      <img
+        src={`/images/products/cutouts/${type}.png`}
+        alt={title ?? ''}
+        aria-hidden={title ? undefined : true}
+        width="400"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        draggable="false"
+        className={cn('object-contain', className)}
+      />
+    )
+  }
+
   const Art = arts[type]
   if (!Art) return null
 

@@ -1,5 +1,4 @@
 import { Plane } from 'lucide-react'
-import ProduceArt from '@/components/art/ProduceArt'
 import RouteMap from '@/components/map/RouteMap'
 import EnquiryChecklist from '@/components/page/EnquiryChecklist'
 import PageHero from '@/components/page/PageHero'
@@ -45,8 +44,13 @@ export default function AirExportPage() {
           {products.map((product, i) => (
             <Reveal key={product.slug} delay={i * 0.08}>
               <article className="group grid h-full items-center gap-6 overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-card sm:grid-cols-[180px_1fr] sm:p-8">
-                <div className="relative mx-auto flex aspect-square w-44 items-center justify-center rounded-full bg-gold-light sm:w-full">
-                  <ProduceArt type={product.slug} className="h-[70%] w-[70%] transition-transform duration-500 group-hover:scale-110" />
+                <div className="mx-auto aspect-[4/3] w-full max-w-xs overflow-hidden rounded-2xl bg-white">
+                  <img
+                    src={`/images/products/${product.slug}.jpg`}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div>
                   <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold-dark">

@@ -8,7 +8,7 @@ export const routes = [
     title: 'Mangal India | Importer & Exporter of Premium Fruits',
     description:
       'Mangal India is a leading importer and exporter of premium fresh and dry fruits, sourcing from 12 countries and supplying buyers across India and Dubai.',
-    h1: 'Mangal India: The Leading Importer and Exporter of Premium Fresh & Dry Fruits.',
+    h1: 'Mangal India: The Leading Entity in Premium Fresh & Dry Fruits.',
   },
   {
     path: '/about/',

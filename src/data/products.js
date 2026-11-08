@@ -13,6 +13,7 @@ export const freshFruits = [
 ].map((product) => ({
   ...product,
   category: 'fresh',
+  image: `/images/products/${product.slug}.jpg`,
   alt: `${product.name} premium quality (illustrative image).`,
 }))
 
@@ -24,7 +25,8 @@ export const dryFruits = [
 ].map((product) => ({
   ...product,
   category: 'dry',
-  alt: `${product.name} premium quality in bulk trays (illustrative image).`,
+  image: `/images/products/${product.slug}.jpg`,
+  alt: `${product.name} premium quality (illustrative image).`,
 }))
 
 export const allProducts = [...freshFruits, ...dryFruits]
@@ -49,5 +51,6 @@ export const exportItems = [
 ].map((product) => ({
   ...product,
   category: 'export',
+  image: `/images/products/${product.slug}.jpg`,
   alt: `${product.name} (illustrative image).`,
 }))

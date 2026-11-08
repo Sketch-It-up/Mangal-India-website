@@ -10,8 +10,8 @@ export const site = {
   logo: null, // [CONFIRM: logo files], path under /public, used in structured data
 
   hero: {
-    eyebrow: ['Import', 'Export', 'Global reach', 'Premium quality'],
-    title: 'Mangal India: The Leading Importer and Exporter of Premium Fresh & Dry Fruits.',
+    eyebrow: ['Global markets', 'Great quality', 'Premium products'],
+    title: 'Mangal India: The Leading Entity in Premium Fresh & Dry Fruits.',
     // Published word for word as supplied by the client, including punctuation.
     subtext:
       'Mangal India sources fresh fruits and dry fruits from international markets and supplies commercial buyers, We deliver the great quality finest and freshest produce, all year long, in all seasons.',
