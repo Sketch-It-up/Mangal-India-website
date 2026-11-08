@@ -345,7 +345,7 @@ const arts = {
   vegetables: Vegetables,
 }
 
-export default function ProduceArt({ type, title, className }) {
+export default function ProduceArt({ type, title, className, loading = 'lazy' }) {
   if (cutouts.has(type)) {
     return (
       <img
@@ -354,7 +354,7 @@ export default function ProduceArt({ type, title, className }) {
         aria-hidden={title ? undefined : true}
         width="400"
         height="400"
-        loading="lazy"
+        loading={loading}
         decoding="async"
         draggable="false"
         className={cn('object-contain', className)}
