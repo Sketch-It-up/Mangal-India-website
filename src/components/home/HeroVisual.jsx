@@ -5,6 +5,7 @@ import { Globe, Store } from 'lucide-react'
 import ProduceArt from '@/components/art/ProduceArt'
 import { indiaFeature, useWorldFeatures } from '@/lib/geo'
 import { india, sourcingCountries } from '@/data/countries'
+import { cn } from '@/lib/cn'
 
 const SIZE = 440
 const countryByIso = Object.fromEntries(sourcingCountries.map((c) => [c.isoNumeric, c]))
@@ -39,7 +40,9 @@ function FloatingProduce({ item, pointerX, pointerY }) {
 
 // Hero illustration: a globe centred on India with great-circle trade arcs from the
 // sourcing countries visible on this hemisphere, framed by floating produce.
-export default function HeroVisual() {
+// `tone="dark"` restyles the backing disc, ring and chips for a dark green slide.
+export default function HeroVisual({ className = 'max-w-[360px] sm:max-w-[460px] lg:max-w-[520px]', tone = 'light' }) {
+  const dark = tone === 'dark'
   const features = useWorldFeatures()
   const reduceMotion = useReducedMotion()
   const oceanId = `ocean-${useId().replace(/:/g, '')}`
@@ -79,14 +82,22 @@ export default function HeroVisual() {
   }, [])
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[360px] sm:max-w-[460px] lg:max-w-[520px]">
-      <div aria-hidden="true" className="absolute inset-[4%] rounded-full bg-gradient-to-br from-leaf-light via-sage to-gold-light" />
+    <div className={cn('relative mx-auto aspect-square w-full', className)}>
       <div
         aria-hidden="true"
-        className="absolute inset-[1%] animate-[spin_90s_linear_infinite] rounded-full border-2 border-dashed border-forest/15"
+        className={cn(
+          'absolute inset-[4%] rounded-full',
+          dark
+            ? 'bg-[radial-gradient(circle,rgba(139,195,74,0.35),rgba(139,195,74,0.08)_62%,transparent_72%)]'
+            : 'bg-gradient-to-br from-leaf-light via-sage to-gold-light',
+        )}
+      />
+      <div
+        aria-hidden="true"
+        className={cn('absolute inset-[1%] animate-[spin_90s_linear_infinite] rounded-full border-2 border-dashed', dark ? 'border-white/20' : 'border-forest/15')}
       />
 
-      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-[12%] h-[76%] w-[76%] drop-shadow-2xl" aria-hidden="true">
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-[12%] h-[76%] w-[76%] animate-hover-float drop-shadow-2xl" aria-hidden="true">
         <defs>
           <radialGradient id={oceanId} cx="35%" cy="30%" r="75%">
             <stop offset="0%" stopColor="#2E6B3D" />
@@ -127,7 +138,7 @@ export default function HeroVisual() {
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.6 }}
-        className="absolute bottom-[-2%] left-[14%] flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-lift backdrop-blur"
+        className="absolute bottom-[-2%] left-[14%] hidden items-center gap-3 sm:flex rounded-2xl bg-white/95 px-4 py-3 shadow-lift backdrop-blur"
       >
         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-leaf-light text-leaf-dark">
           <Globe aria-hidden="true" className="h-5 w-5" />
@@ -142,7 +153,10 @@ export default function HeroVisual() {
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute right-[-2%] top-[22%] hidden items-center gap-2.5 rounded-2xl bg-forest px-3.5 py-2.5 text-white shadow-lift sm:flex"
+        className={cn(
+          'absolute right-[-2%] top-[22%] hidden items-center gap-2.5 rounded-2xl px-3.5 py-2.5 text-white shadow-lift sm:flex',
+          dark ? 'border border-white/20 bg-white/10 backdrop-blur-md' : 'bg-forest',
+        )}
       >
         <Store aria-hidden="true" className="h-4 w-4 text-gold" />
         <span className="text-xs font-semibold leading-tight">

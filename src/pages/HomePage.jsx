@@ -27,7 +27,7 @@ export default function HomePage() {
       <Seo title={route.title} description={route.description} path={route.path} />
       <JsonLd data={[organizationSchema(), websiteSchema()]} />
       <HeroSection />
-      <StatsBand bridge="bg-white" />
+      <StatsBand bridge="bg-white" overlap={false} />
       <FounderFeature />
       <ImportExportSplit />
       <WorldMapSection />

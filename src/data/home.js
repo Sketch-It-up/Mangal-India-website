@@ -1,4 +1,59 @@
 // Homepage copy (Section 5), in publication order. Final copy: do not reword without client approval.
+import { dryFruitCountries, freshFruitCountries } from './countries'
+import { dryFruitsPage, exportsPage, freshFruitsPage } from './pages'
+import { dryFruits, freshFruits } from './products'
+import { routeByPath } from './routes'
+
+// Hero slides that follow the brand slide. Titles and text reuse each page's approved H1 and intro;
+// `accent` is the part of the title set in italics. `stage` is the visual: a studio photo
+// (public/images/hero) with produce cut-outs floating around it and a fact chip.
+export const heroSlides = [
+  {
+    id: 'fresh',
+    label: 'Fresh Fruits',
+    eyebrow: ['Fresh fruits', `${freshFruitCountries.length} sourcing countries`],
+    title: routeByPath['/products/fresh-fruits/'].h1,
+    accent: 'around the world.',
+    text: freshFruitsPage.intro,
+    ctas: [{ label: 'Explore Fresh Fruits', to: '/products/fresh-fruits/' }, freshFruitsPage.cta],
+    word: 'Fresh',
+    stage: {
+      photo: '/images/hero/fresh.jpg',
+      cutouts: ['cherries', 'mandarins', 'kiwi'],
+      chip: { title: `${freshFruits.length} fresh fruits`, text: `From ${freshFruitCountries.length} countries` },
+    },
+  },
+  {
+    id: 'dry',
+    label: 'Dry Fruits',
+    eyebrow: ['Dry fruits', `${dryFruitCountries.length} sourcing countries`],
+    title: routeByPath['/products/dry-fruits/'].h1,
+    accent: 'five countries.',
+    text: dryFruitsPage.intro,
+    ctas: [{ label: 'Explore Dry Fruits', to: '/products/dry-fruits/' }, dryFruitsPage.cta],
+    word: 'Dry',
+    stage: {
+      photo: '/images/hero/dry.jpg',
+      cutouts: ['almonds', 'pistachios', 'walnuts'],
+      chip: { title: `${dryFruits.length} dry fruits`, text: `From ${dryFruitCountries.length} countries` },
+    },
+  },
+  {
+    id: 'exports',
+    label: 'Exports',
+    eyebrow: ['Exports', 'Beginning with Dubai'],
+    title: routeByPath['/exports/'].h1,
+    accent: 'to the world.',
+    text: exportsPage.intro,
+    ctas: [{ label: 'Explore Exports', to: '/exports/' }, exportsPage.secondaryCta],
+    word: 'Export',
+    stage: {
+      photo: '/images/hero/exports.jpg',
+      cutouts: ['rice'],
+      chip: { title: 'Rice · Mangoes · Vegetables', text: 'Premium Indian produce' },
+    },
+  },
+]
 
 export const statsHeading = 'A trading record that speaks for itself.'
 

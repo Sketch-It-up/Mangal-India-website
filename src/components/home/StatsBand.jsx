@@ -8,13 +8,13 @@ import { stats } from '@/data/site'
 
 const icons = [CalendarCheck, ContainerIcon, Cherry, Globe, Warehouse]
 
-// Section 2 — numbers strip, overlapping the bottom edge of the hero.
+// Section 2 — numbers strip, overlapping the bottom edge of the hero (pass `overlap={false}` to sit below it).
 // Inner pages pass `heading={null}`: the numbers show without the homepage heading row.
 // `bridge` is the background of the section that follows (e.g. 'bg-white'): it fills the
 // lower half behind the card, so the card straddles both sections instead of ending on a seam.
-export default function StatsBand({ heading = statsHeading, bridge }) {
+export default function StatsBand({ heading = statsHeading, bridge, overlap = true }) {
   return (
-    <section aria-labelledby="stats-heading" className="relative z-10 -mt-20 lg:-mt-24">
+    <section aria-labelledby="stats-heading" className={cn('relative z-10', overlap ? '-mt-20 lg:-mt-24' : 'pt-4 lg:pt-6')}>
       {bridge && <div aria-hidden="true" className={cn('absolute inset-x-0 bottom-0 top-1/2', bridge)} />}
       <Container className="relative">
         <div className="relative overflow-hidden rounded-[28px] bg-forest px-6 py-10 text-white shadow-lift sm:px-10 lg:px-12 lg:py-12">
