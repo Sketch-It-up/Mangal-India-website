@@ -28,6 +28,14 @@ export const aboutPage = {
     text: 'Mangal India is led by Saikrushna Warghude, Managing Director & CEO, whose journey from agricultural roots to global trade shapes our vision. Read his message.',
     cta: { label: 'Read the Founder’s Message', to: '/about/founder-message/' },
   },
+  coo: {
+    name: 'Pandurang Ped',
+    title: 'Chief Operating Officer',
+    portrait: '/images/coo.jpg',
+    heading: 'Running our operations',
+    // [CONFIRM: COO bio wording with the client]
+    text: 'As Chief Operating Officer, Pandurang Ped oversees Mangal India’s day-to-day operations, from sourcing and shipment coordination to warehousing and distribution, so premium produce reaches buyers on time and in great condition.',
+  },
   world: {
     heading: 'India to the world',
     text: 'Our next chapter takes premium Indian produce abroad. We are exporting basmati, 1121, non-basmati and Sona Masoori rice, with fresh vegetables and mangoes by air, and Mangal India is set to open its own premium retail shop in Dubai.',

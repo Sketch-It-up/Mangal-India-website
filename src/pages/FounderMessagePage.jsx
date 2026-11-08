@@ -25,7 +25,7 @@ export default function FounderMessagePage() {
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
               <div className="relative mx-auto max-w-sm">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-forest-600 to-forest shadow-lift">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-gradient-to-br from-forest-600 to-forest shadow-lift">
                   {founder.portrait ? (
                     <img
                       src={founder.portrait}

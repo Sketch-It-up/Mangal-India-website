@@ -46,14 +46,14 @@ export default function HeroSection() {
           <Reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-forest/10 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest shadow-sm backdrop-blur">
               <Sparkles aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-tangerine" />
-              {hero.eyebrow.join(' · ')}
+              {hero.eyebrow.join(' | ')}
             </p>
           </Reveal>
 
           <Reveal delay={0.06}>
             <h1 className="mt-6 text-h1 font-bold text-forest sm:text-[50px] sm:leading-[1.08] lg:text-[54px] xl:text-h1-lg">
               <span className="mb-1 block font-medium italic text-leaf-dark">Mangal India:</span>{' '}
-              The Leading Importer and Exporter of{' '}
+              The Leading Entity in{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">Premium</span>
                 <svg

@@ -7,7 +7,7 @@ export const founder = {
   signOffCompany: 'Mangal India (Krishna Mohan Exports Pvt Ltd)',
   pullQuote: 'Let’s build meaningful connections through global trade.',
   teaser: 'from agricultural roots to global trade',
-  portrait: null, // [CONFIRM: professional portrait]
+  portrait: '/images/founder.jpg',
 }
 
 export const founderMessage = [

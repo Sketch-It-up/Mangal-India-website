@@ -1,6 +1,5 @@
 import { ArrowRight, Store } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import ProduceArt from '@/components/art/ProduceArt'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
@@ -43,8 +42,13 @@ export default function ExportsDubaiSection() {
                 to={item.to}
                 className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-gold/40 hover:bg-white/10"
               >
-                <span className="flex aspect-square w-full items-center justify-center rounded-xl bg-white/5">
-                  <ProduceArt type={item.slug} className="h-3/4 w-3/4 transition-transform duration-500 group-hover:scale-110" />
+                <span className="block aspect-[4/3] w-full overflow-hidden rounded-xl bg-white">
+                  <img
+                    src={item.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </span>
                 <span className="mt-4 font-display text-lg font-semibold text-white">{item.name}</span>
                 <span className="mt-1 text-sm text-white/65">{item.line}</span>
