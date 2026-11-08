@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { A11y, Autoplay, EffectCreative, Keyboard, Parallax } from 'swiper/modules'
-import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight, Globe, Mouse, Nut, Pause, Plane, Play, Sparkles, Sprout } from 'lucide-react'
+import { A11y, EffectCreative, Keyboard, Parallax } from 'swiper/modules'
+import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight, Globe, Mouse, Nut, Plane, Sparkles, Sprout } from 'lucide-react'
 import HeroProduceStage from './HeroProduceStage'
 import HeroVisual from './HeroVisual'
 import Button from '@/components/ui/Button'
@@ -15,7 +15,6 @@ import useScrollSteps from '@/lib/useScrollSteps'
 import 'swiper/css'
 import 'swiper/css/effect-creative'
 
-const DELAY = 1000 // ms each slide stays up while autoplaying
 const SPEED = 850 // ms for the slide change
 
 // Moving forward, the current slide hovers out to the left (drifting left, shrinking and fading
@@ -246,40 +245,22 @@ function Slide({ slide, index, active }) {
 
 // Section 1 — Hero: a full-screen rounded panel of four slides (brand, fresh fruits, dry fruits,
 // exports). While the page sits at the top, one wheel gesture or vertical swipe moves one slide;
-// past the last slide (or before the first) the page scrolls as normal. Autoplay keeps running
-// alongside manual navigation (the pause button stops it) and pauses while the hero is off screen.
+// past the last slide (or before the first) the page scrolls as normal. Slides only change when the
+// visitor scrolls, swipes, drags or uses the controls; there is no autoplay.
 export default function HeroSection() {
   const reduceMotion = useReducedMotion()
   const sectionRef = useRef(null)
   const swiperRef = useRef(null)
-  const bars = useRef([])
   const [active, setActive] = useState(0)
-  const [playing, setPlaying] = useState(!reduceMotion)
   const dark = slides[active].dark
   const last = slides.length - 1
-
-  // Bars for earlier slides are full and later ones empty; the active bar fills as autoplay runs.
-  const paintBars = (index, fillActive) => {
-    bars.current.forEach((bar, i) => {
-      if (bar) bar.style.transform = `scaleX(${i < index || (i === index && fillActive) ? 1 : 0})`
-    })
-  }
 
   const go = (to) => {
     const swiper = swiperRef.current
     if (!swiper) return
     if (to === 'next') swiper.slideNext()
     else if (to === 'prev') swiper.slidePrev()
-    else swiper.slideToLoop(to)
-  }
-
-  const togglePlaying = () => {
-    const swiper = swiperRef.current
-    if (!swiper) return
-    if (playing) swiper.autoplay.stop()
-    else swiper.autoplay.start()
-    setPlaying(!playing)
-    paintBars(active, playing)
+    else swiper.slideTo(to)
   }
 
   const skipHero = () => {
@@ -291,29 +272,15 @@ export default function HeroSection() {
 
   useScrollSteps(sectionRef, {
     canStep: (dir) => {
-      const index = swiperRef.current?.realIndex ?? 0
+      const index = swiperRef.current?.activeIndex ?? 0
       return dir > 0 ? index < last : index > 0
     },
     onStep: (dir) => go(dir > 0 ? 'next' : 'prev'),
     lockMs: SPEED + 150,
   })
 
-  // No point advancing slides nobody can see.
-  useEffect(() => {
-    const el = sectionRef.current
-    if (!el || !('IntersectionObserver' in window)) return undefined
-    const observer = new IntersectionObserver(([entry]) => {
-      const autoplay = swiperRef.current?.autoplay
-      if (!autoplay?.running) return
-      if (entry.isIntersecting) autoplay.resume()
-      else autoplay.pause()
-    })
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   const control = cn(
-    'flex h-11 w-11 items-center justify-center rounded-full border transition',
+    'flex h-11 w-11 items-center justify-center rounded-full border transition disabled:pointer-events-none disabled:opacity-40',
     dark ? 'border-white/20 bg-white/10 text-white backdrop-blur hover:bg-white/20' : 'border-forest/10 bg-white text-forest shadow-card hover:shadow-lift',
   )
 
@@ -321,31 +288,18 @@ export default function HeroSection() {
     <section ref={sectionRef} className="relative px-2 pb-2 sm:px-3 lg:px-4" aria-roledescription="carousel" aria-label="Mangal India highlights">
       <div className="relative overflow-hidden rounded-[1.75rem] bg-forest-900 lg:rounded-[2.25rem]">
         <Swiper
-          modules={[A11y, Autoplay, EffectCreative, Keyboard, Parallax]}
-          loop
+          modules={[A11y, EffectCreative, Keyboard, Parallax]}
           effect="creative"
           creativeEffect={creativeEffect}
           parallax={!reduceMotion}
           speed={reduceMotion ? 300 : SPEED}
           grabCursor
-          autoplay={{ delay: DELAY, disableOnInteraction: false }}
           keyboard={{ enabled: true, onlyInViewport: true }}
           a11y={{ itemRoleDescriptionMessage: 'slide', slideLabelMessage: '{{index}} of {{slidesLength}}' }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper
-            if (reduceMotion) swiper.autoplay.stop()
-            paintBars(0, reduceMotion)
           }}
-          onSlideChange={(swiper) => {
-            setActive(swiper.realIndex)
-            paintBars(swiper.realIndex, !swiper.autoplay.running)
-          }}
-          onAutoplayStart={() => setPlaying(true)}
-          onAutoplayStop={() => setPlaying(false)}
-          onAutoplayTimeLeft={(swiper, _, progress) => {
-            const bar = bars.current[swiper.realIndex]
-            if (bar) bar.style.transform = `scaleX(${1 - progress})`
-          }}
+          onSlideChange={(swiper) => setActive(swiper.activeIndex)}
           className="[&_.swiper-wrapper]:!ease-[cubic-bezier(0.65,0,0.35,1)]"
         >
           {slides.map((slide, i) => (
@@ -374,7 +328,14 @@ export default function HeroSection() {
                   className="group min-w-0 flex-1 py-2 text-left"
                 >
                   <span className={cn('block h-[3px] overflow-hidden rounded-full', dark ? 'bg-white/20' : 'bg-forest/10')}>
-                    <span ref={(el) => (bars.current[i] = el)} className={cn('block h-full origin-left scale-x-0 rounded-full', dark ? 'bg-gold' : 'bg-forest')} />
+                    {/* The current slide and the ones before it are filled. */}
+                    <span
+                      className={cn(
+                        'block h-full origin-left rounded-full transition-transform duration-700',
+                        i <= active ? 'scale-x-100' : 'scale-x-0',
+                        dark ? 'bg-gold' : 'bg-forest',
+                      )}
+                    />
                   </span>
                   <span
                     className={cn(
@@ -398,13 +359,10 @@ export default function HeroSection() {
                 {active === last ? <ArrowDown aria-hidden="true" className="h-4 w-4 animate-bounce" /> : <Mouse aria-hidden="true" className="h-4 w-4 animate-bounce" />}
                 {active === last ? 'Continue' : 'Scroll'}
               </button>
-              <button type="button" onClick={togglePlaying} className={cn(control, 'hidden sm:flex')} aria-label={playing ? 'Pause slideshow' : 'Play slideshow'}>
-                {playing ? <Pause aria-hidden="true" className="h-4 w-4" /> : <Play aria-hidden="true" className="h-4 w-4" />}
-              </button>
-              <button type="button" onClick={() => go('prev')} className={control} aria-label="Previous slide">
+              <button type="button" onClick={() => go('prev')} disabled={active === 0} className={control} aria-label="Previous slide">
                 <ChevronLeft aria-hidden="true" className="h-5 w-5" />
               </button>
-              <button type="button" onClick={() => go('next')} className={control} aria-label="Next slide">
+              <button type="button" onClick={() => go('next')} disabled={active === last} className={control} aria-label="Next slide">
                 <ChevronRight aria-hidden="true" className="h-5 w-5" />
               </button>
             </div>
