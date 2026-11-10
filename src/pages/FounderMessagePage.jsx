@@ -1,5 +1,4 @@
 import { ArrowRight, Quote } from 'lucide-react'
-import ProduceArt from '@/components/art/ProduceArt'
 import PageHero from '@/components/page/PageHero'
 import Seo from '@/components/seo/Seo'
 import Button from '@/components/ui/Button'
@@ -38,9 +37,6 @@ export default function FounderMessagePage() {
                       <Tbc label="professional portrait" tone="dark" />
                     </div>
                   )}
-                </div>
-                <div aria-hidden="true" className="absolute -right-5 -top-5 w-20 animate-float rounded-full bg-white p-2.5 shadow-lift">
-                  <ProduceArt type="apples" />
                 </div>
                 <div className="mt-6 border-l-4 border-leaf pl-4">
                   <p className="font-display text-2xl font-semibold text-forest">{founder.name}</p>
