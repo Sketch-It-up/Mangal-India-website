@@ -1,5 +1,4 @@
 import { ArrowRight, Quote } from 'lucide-react'
-import ProduceArt from '@/components/art/ProduceArt'
 import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
 import Reveal from '@/components/ui/Reveal'
@@ -39,12 +38,6 @@ export default function FounderFeature() {
             </div>
           </div>
 
-          <div aria-hidden="true" className="absolute -right-3 top-[10%] w-16 animate-float rounded-full bg-white p-2 shadow-lift sm:-right-7 sm:w-20">
-            <ProduceArt type="pears" />
-          </div>
-          <div aria-hidden="true" className="absolute -left-3 top-[46%] w-14 animate-float rounded-full bg-white p-2 shadow-lift [animation-delay:1.4s] sm:-left-7 sm:w-[4.5rem]">
-            <ProduceArt type="almonds" />
-          </div>
           {!founder.portrait && <Tbc label="professional portrait" className="absolute -bottom-2 right-0" />}
         </Reveal>
 
