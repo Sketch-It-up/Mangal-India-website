@@ -28,7 +28,7 @@ export const heroSlides = [
     label: 'Dry Fruits',
     eyebrow: ['Dry fruits', `${dryFruitCountries.length} sourcing countries`],
     title: routeByPath['/products/dry-fruits/'].h1,
-    accent: 'five countries.',
+    accent: 'twelve countries.',
     text: dryFruitsPage.intro,
     ctas: [{ label: 'Explore Dry Fruits', to: '/products/dry-fruits/' }, dryFruitsPage.cta],
     word: 'Dry',
@@ -50,7 +50,7 @@ export const heroSlides = [
     stage: {
       photo: '/images/hero/exports.jpg',
       cutouts: ['rice'],
-      chip: { title: 'Rice · Mangoes · Vegetables', text: 'Premium Indian produce' },
+      chip: { title: 'Fruits · Vegetables · Rice', text: 'Grown and exported by us' },
     },
   },
 ]
@@ -62,27 +62,27 @@ export const importExport = {
   import: {
     label: 'Import',
     tag: 'The established engine',
-    text: 'Premium fresh fruits and dry fruits sourced from 12 countries and supplied to commercial buyers across India through 4 wholesale market outlets and 10+ distribution centres.',
+    text: 'Premium fresh fruits and dry fruits sourced from 20 countries and supplied to commercial buyers across India through 4 wholesale market outlets and 10+ distribution centres.',
     cta: { label: 'Explore Imports', to: '/products/' },
   },
   export: {
     label: 'Export',
     tag: 'The growth engine',
-    text: 'Premium Indian rice (basmati, 1121, non-basmati, Sona Masoori and more), mangoes and fresh vegetables by air — beginning with Dubai, where Mangal India is set to open its own premium retail shop.',
+    text: 'Premium Indian mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, plus rice, from a grower-exporter with over 100 acres of its own farming — beginning with Dubai, where Mangal India is set to open its own premium retail shop.',
     cta: { label: 'Explore Exports', to: '/exports/' },
   },
 }
 
 export const mapSection = {
-  heading: 'Importing from 12 countries. Exporting from India.',
+  heading: 'Importing from 20 countries. Exporting from India.',
   intro:
-    'Mangal India imports premium fruits and dry fruits from 12 countries across the world, brings them to Indian markets — and now exports premium Indian produce back out, beginning with Dubai.',
+    'Mangal India imports premium fruits and dry fruits from 20 countries across the world, brings them to Indian markets — and now exports premium Indian produce back out, beginning with Dubai.',
   cta: { label: 'Explore the Full Map', to: '/global-network/' },
 }
 
 export const portfolio = {
   heading: 'Premium fruits. Premium dry fruits. Great quality.',
-  intro: 'Nine fresh fruits and four dry fruits, selected for premium quality and supplied to buyers who expect more.',
+  intro: 'Fresh fruits and dry fruits from 20 countries, selected for premium quality and supplied to buyers who expect more.',
   ctas: [
     { label: 'Explore Fresh Fruits', to: '/products/fresh-fruits/' },
     { label: 'Explore Dry Fruits', to: '/products/dry-fruits/' },
@@ -99,9 +99,9 @@ export const indiaNetwork = {
 export const whyUs = {
   heading: 'Built on experience. Driven by quality.',
   points: [
-    { title: 'Global reach', text: 'Premium produce sourced from 12 countries.' },
+    { title: 'Global reach', text: 'Premium produce sourced from 20 countries.' },
     { title: 'Great quality', text: 'A premium selection, with specifications confirmed before every order.' },
-    { title: 'Wide range', text: '16+ products across fresh and dry fruit, growing into rice, mangoes and vegetables.' },
+    { title: 'Wide range', text: '20+ products across fresh and dry fruit, with Indian fruits, vegetables and rice for export.' },
     { title: 'Proven scale', text: '400+ containers traded over 8+ years.' },
     { title: 'Deep Indian reach', text: '10+ distribution centres and customers across India.' },
   ],
@@ -117,7 +117,7 @@ export const founderFeature = {
 export const exportsDubai = {
   heading: 'From India to the world — starting with Dubai.',
   paragraphs: [
-    'Mangal India is now taking premium Indian produce to the world. Our export range includes basmati, 1121, non-basmati and Sona Masoori rice, along with fresh vegetables and mangoes shipped by air.',
+    'Mangal India is now taking premium Indian produce to the world. As a grower-exporter with over 100 acres of our own farming, our export range includes mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, along with premium rice.',
     'In Dubai, Mangal India is set to open its own premium retail shop, serving premium fruits, vegetables and premium-quality dry fruits to customers in the city.',
   ],
   ctas: [
@@ -147,7 +147,7 @@ export const pathways = {
     },
     {
       audience: 'International buyers',
-      text: 'Premium Indian rice, mangoes and fresh vegetables, with air export for fresh produce.',
+      text: 'Premium Indian fruits, vegetables and rice from a grower-exporter, with air export for fresh produce.',
       cta: { label: 'Send an Export Enquiry', to: '/trade-with-us/international-buyers/' },
     },
     {

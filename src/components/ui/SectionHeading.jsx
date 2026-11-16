@@ -29,7 +29,7 @@ export default function SectionHeading({
       )}
       <Tag
         className={cn(
-          'font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px] lg:leading-[1.1]',
+          'font-display text-[1.75rem] font-bold leading-[1.15] sm:text-4xl sm:leading-tight lg:text-[44px] lg:leading-[1.1]',
           dark ? 'text-white' : 'text-forest',
         )}
       >
@@ -46,7 +46,7 @@ export default function SectionHeading({
         {typeof title === 'string' ? <RevealText text={title} /> : title}
       </Tag>
       {intro && (
-        <p className={cn('mt-4 text-[17px] leading-relaxed', dark ? 'text-white/75' : 'text-ink-muted')}>{intro}</p>
+        <p className={cn('mt-3 text-base leading-relaxed sm:mt-4 sm:text-[17px]', dark ? 'text-white/75' : 'text-ink-muted')}>{intro}</p>
       )}
     </div>
   )

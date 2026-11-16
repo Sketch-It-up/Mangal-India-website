@@ -3,8 +3,7 @@
 export const founder = {
   name: 'Saikrushna Warghude',
   title: 'Managing Director & CEO',
-  // The founder's own sign-off; the header and footer lock-up still show only "Krishna Mohan Exports".
-  signOffCompany: 'Mangal India (Krishna Mohan Exports Pvt Ltd)',
+  signOffCompany: 'Mangal India',
   pullQuote: 'Let’s build meaningful connections through global trade.',
   teaser: 'from agricultural roots to global trade',
   portrait: '/images/founder.jpg',

@@ -6,18 +6,18 @@ import Reveal from '@/components/ui/Reveal'
 import { finalCta } from '@/data/home'
 
 const decorations = [
-  { type: 'cherries', className: 'left-[4%] top-[12%] w-20 sm:w-28', delay: '0s' },
+  { type: 'cherries', className: '-left-3 -top-2 w-16 sm:left-[4%] sm:top-[12%] sm:w-28', delay: '0s' },
   { type: 'oranges', className: 'bottom-[8%] left-[10%] hidden w-24 sm:block', delay: '1.4s' },
-  { type: 'mangoes', className: 'right-[5%] top-[10%] w-20 sm:w-28', delay: '0.8s' },
+  { type: 'mangoes', className: '-right-2 -top-2 w-16 sm:right-[5%] sm:top-[10%] sm:w-28', delay: '0.8s' },
   { type: 'pistachios', className: 'bottom-[10%] right-[9%] hidden w-24 sm:block', delay: '2s' },
 ]
 
 // Section 10 — final statement.
 export default function FinalCta() {
   return (
-    <section className="py-24 lg:py-28">
+    <section className="py-16 sm:py-24 lg:py-28">
       <Container>
-        <Reveal className="relative overflow-hidden rounded-[2rem] bg-forest px-6 py-20 text-center sm:px-12 lg:py-24">
+        <Reveal className="relative overflow-hidden rounded-[1.75rem] bg-forest px-5 py-16 text-center sm:rounded-[2rem] sm:px-12 sm:py-20 lg:py-24">
           <div aria-hidden="true" className="absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-leaf/10 blur-3xl" />
           {decorations.map((item) => (
             <div key={item.type} aria-hidden="true" className={`absolute animate-float opacity-90 ${item.className}`} style={{ animationDelay: item.delay }}>
@@ -29,8 +29,8 @@ export default function FinalCta() {
               <span className="whitespace-nowrap">Harvests in.</span>{' '}
               <span className="whitespace-nowrap italic text-gold">Horizons out.</span>
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-white/75">{finalCta.text}</p>
-            <Button to={finalCta.cta.to} variant="accent" size="lg" icon={ArrowRight} className="mt-10">
+            <p className="mt-5 text-base leading-relaxed text-white/75 sm:mt-6 sm:text-lg">{finalCta.text}</p>
+            <Button to={finalCta.cta.to} variant="accent" size="lg" icon={ArrowRight} className="mt-8 w-full sm:mt-10 sm:w-auto">
               {finalCta.cta.label}
             </Button>
           </div>

@@ -1,6 +1,6 @@
 # Mangal India website
 
-Marketing site for Mangal India · Krishna Mohan Exports, built from the build document
+Marketing site for Mangal India, built from the build document
 `Mangal_India_Website_Final_Content.docx` (the "spec"; section numbers in code comments refer to it).
 
 React 18 · Vite 5 · React Router 6 · Tailwind CSS 3 · Framer Motion · d3-geo.

@@ -56,7 +56,7 @@ export default function GlobalNetworkPage() {
       </section>
 
       {/* Where we source: full text list of countries and roles */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading eyebrow={`${sourcingCountries.length} countries · ${continentCount} continents`} title={globalNetworkPage.sourceHeading} />
@@ -92,7 +92,7 @@ export default function GlobalNetworkPage() {
       </section>
 
       {/* Where we supply */}
-      <section className="bg-sage py-20 lg:py-24">
+      <section className="bg-sage py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading eyebrow="Into India · Out to Dubai" title={supply.heading} />
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -132,7 +132,7 @@ export default function GlobalNetworkPage() {
       </section>
 
       {/* How to read the map */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <SectionHeading eyebrow="Map key" title={howToRead.heading} />

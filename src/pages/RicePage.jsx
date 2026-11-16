@@ -60,7 +60,7 @@ export default function RicePage() {
       />
 
       {/* Varieties */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading eyebrow={`${riceVarieties.length - 1} varieties and more`} title="Varieties" />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -85,7 +85,7 @@ export default function RicePage() {
         </Container>
       </section>
 
-      <section className="pb-24 lg:pb-28">
+      <section className="pb-16 sm:pb-24 lg:pb-28">
         <Container className="grid gap-6 lg:grid-cols-3">
           <EnquiryChecklist heading={ricePage.checklistHeading} items={riceEnquiryChecklist} cta={ricePage.cta} className="lg:col-span-2" />
           <RelatedLinks links={related} />

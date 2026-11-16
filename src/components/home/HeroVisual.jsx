@@ -144,7 +144,7 @@ export default function HeroVisual({ className = 'max-w-[360px] sm:max-w-[460px]
           <Globe aria-hidden="true" className="h-5 w-5" />
         </span>
         <span className="leading-tight">
-          <span className="block font-display text-lg font-bold text-forest">12 countries</span>
+          <span className="block font-display text-lg font-bold text-forest">20 countries</span>
           <span className="block text-xs text-ink-muted">Six continents of sourcing</span>
         </span>
       </motion.div>

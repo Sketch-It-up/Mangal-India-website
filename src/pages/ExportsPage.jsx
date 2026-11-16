@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Store } from 'lucide-react'
+import { ArrowRight, Check, Store, Tractor } from 'lucide-react'
 import ProduceArt from '@/components/art/ProduceArt'
 import RouteMap from '@/components/map/RouteMap'
 import EnquiryChecklist from '@/components/page/EnquiryChecklist'
@@ -9,7 +9,8 @@ import Badge from '@/components/ui/Badge'
 import Container from '@/components/ui/Container'
 import Reveal from '@/components/ui/Reveal'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { exportsPage } from '@/data/pages'
+import Button from '@/components/ui/Button'
+import { exportsGrower, exportsPage } from '@/data/pages'
 import { routeByPath } from '@/data/routes'
 
 const route = routeByPath['/exports/']
@@ -27,14 +28,14 @@ export default function ExportsPage() {
         eyebrow="Exports"
         intro={page.intro}
         ctas={[page.cta, page.secondaryCta]}
-        visual={<RouteMap label="Rice · Mangoes · Vegetables · Premium Retail Shop" />}
+        visual={<RouteMap label="Fruits · Vegetables · Rice · Premium Retail Shop" />}
       />
 
       {/* Our export range */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading eyebrow="From India" title={page.rangeHeading} />
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          <ul className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-3">
             {page.range.map((item, i) => (
               <Reveal as="li" key={item.slug} delay={i * 0.08}>
                 <Link
@@ -64,8 +65,48 @@ export default function ExportsPage() {
         </Container>
       </section>
 
+      {/* Grower-exporter: our own farms + the fresh-produce list */}
+      <section className="bg-sage py-14 sm:py-20 lg:py-24">
+        <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <Reveal>
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest text-gold">
+              <Tractor aria-hidden="true" className="h-6 w-6" />
+            </span>
+            <SectionHeading className="mt-6" eyebrow={exportsGrower.eyebrow} title={exportsGrower.heading} intro={exportsGrower.text} />
+            <Button to={exportsGrower.cta.to} icon={ArrowRight} className="mt-7 w-full sm:mt-8 sm:w-auto">
+              {exportsGrower.cta.label}
+            </Button>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="overflow-hidden rounded-[1.75rem] bg-white shadow-card">
+              <img
+                src="/images/farm/field-05.jpg"
+                alt="A worker tending rows of young plants on one of Mangal India's own farms."
+                width="1600"
+                height="900"
+                loading="lazy"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <div className="p-5 sm:p-9">
+              <h3 className="font-display text-2xl font-bold text-forest">{exportsGrower.produceHeading}</h3>
+              <ul className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-6 sm:gap-3">
+                {exportsGrower.produce.map((item) => (
+                  <li key={item} className="flex min-w-0 items-center gap-2 rounded-xl bg-sage px-3 py-2.5 text-sm font-medium text-ink sm:gap-3 sm:px-4 sm:py-3 sm:text-base">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest text-white sm:h-6 sm:w-6">
+                      <Check aria-hidden="true" className="h-3 w-3 sm:h-3.5 sm:w-3.5" strokeWidth={3} />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* Dubai shop + how to enquire */}
-      <section className="pb-24 lg:pb-28">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container className="grid gap-6 lg:grid-cols-2">
           <Reveal>
             <Link

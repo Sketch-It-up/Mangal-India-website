@@ -1,7 +1,7 @@
 import ProductCategoryPage from './ProductCategoryPage'
 import { freshFruitCountries } from '@/data/countries'
 import { freshFruitsPage } from '@/data/pages'
-import { freshFruits } from '@/data/products'
+import { freshFruitGroups, freshFruits } from '@/data/products'
 import { routeByPath } from '@/data/routes'
 
 const related = [
@@ -19,9 +19,10 @@ export default function FreshFruitsPage() {
       eyebrow="Fresh Fruits"
       content={freshFruitsPage}
       products={freshFruits}
+      groups={freshFruitGroups}
       countries={freshFruitCountries}
       countriesLabel={`Sourced from ${freshFruitCountries.length} countries`}
-      gridHeading="Our nine premium fresh fruits"
+      gridHeading="Our premium fresh fruits"
       related={related}
     />
   )

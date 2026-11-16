@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { cn } from '@/lib/cn'
 import { site } from '@/data/site'
 
-// Section 4 lock-up: "Mangal India" in Fraunces Bold, "Krishna Mohan Exports" beneath
+// Section 4 lock-up: "Mangal India" in Fraunces Bold, a short descriptor beneath
 // in small, widely tracked uppercase (~40% of line-1 height). No other wording.
 export default function Logo({ tone = 'dark', size = 'md', className }) {
   const light = tone === 'light'

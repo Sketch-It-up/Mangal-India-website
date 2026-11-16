@@ -28,7 +28,7 @@ export default function TradePage({ route, content, formType, related }) {
         tight
       />
 
-      <section className="pb-24 lg:pb-28">
+      <section className="pb-16 sm:pb-24 lg:pb-28">
         <Container className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="space-y-6 lg:col-span-5">
             <EnquiryChecklist heading={content.checklistHeading} items={content.checklist} columns={1} />

@@ -39,7 +39,7 @@ export default function AirExportPage() {
         visual={<RouteMap label="Mangoes · Fresh vegetables · By air" />}
       />
 
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container className="grid gap-6 md:grid-cols-2">
           {products.map((product, i) => (
             <Reveal key={product.slug} delay={i * 0.08}>
@@ -65,7 +65,7 @@ export default function AirExportPage() {
         </Container>
       </section>
 
-      <section className="pb-24 lg:pb-28">
+      <section className="pb-16 sm:pb-24 lg:pb-28">
         <Container className="grid gap-6 lg:grid-cols-3">
           <EnquiryChecklist
             heading={airExportPage.checklistHeading}

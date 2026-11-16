@@ -7,7 +7,7 @@ export const routes = [
     name: 'Home',
     title: 'Mangal India | Importer & Exporter of Premium Fruits',
     description:
-      'Mangal India is a leading importer and exporter of premium fresh and dry fruits, sourcing from 12 countries and supplying buyers across India and Dubai.',
+      'Mangal India is a leading importer and exporter of premium fresh and dry fruits, sourcing from 20 countries and supplying buyers across India and Dubai.',
     h1: 'Mangal India: The Leading Entity in Premium Fresh & Dry Fruits.',
   },
   {
@@ -15,7 +15,7 @@ export const routes = [
     name: 'About',
     title: 'About Mangal India | Importer & Exporter of Fruits',
     description:
-      'Eight-plus years, 400+ containers, 12 sourcing countries and 10+ distribution centres. Meet Mangal India, importer and exporter of premium fruits.',
+      'Eight-plus years, 400+ containers, 20 sourcing countries and 10+ distribution centres. Meet Mangal India, importer and exporter of premium fruits.',
     h1: 'An importer and exporter of premium fresh and dry fruits.',
   },
   {
@@ -27,11 +27,19 @@ export const routes = [
     h1: 'A Message from Our Founder & CEO',
   },
   {
+    path: '/about/our-team/',
+    name: 'Our Team',
+    title: 'Our Team | Leadership | Mangal India',
+    description:
+      'Meet the team behind Mangal India: leadership across technology, accounts, operations, marketing and retail, led by CEO Saikrushna Warghude.',
+    h1: 'The team behind Mangal India.',
+  },
+  {
     path: '/products/',
     name: 'Products',
     title: 'Products | Premium Fruits & Dry Fruits | Mangal India',
     description:
-      'Nine premium fresh fruits, four premium dry fruits and an export range of rice, mangoes and vegetables, from Mangal India.',
+      'Premium fresh fruits, premium dry fruits and an export range of Indian fruits, vegetables and rice, from Mangal India.',
     h1: 'Premium produce. Great quality. Wide range.',
   },
   {
@@ -39,7 +47,7 @@ export const routes = [
     name: 'Fresh Fruits',
     title: 'Premium Imported Fresh Fruits | Mangal India',
     description:
-      'Premium apples, oranges, mandarins, kiwi, dragon fruit, pears, cherries, plums and nectarines from eight countries. Request specifications.',
+      'Premium apples, pears, oranges, kiwi, mandarins, dragon fruit, cherries and Thai fruits from 14 countries. Request specifications.',
     h1: 'Premium fresh fruits from around the world.',
   },
   {
@@ -47,15 +55,15 @@ export const routes = [
     name: 'Dry Fruits',
     title: 'Premium Dry Fruits | Dates, Pistachios, Almonds',
     description:
-      'Premium dates, pistachios, almonds and walnuts sourced from Chile, Afghanistan, Oman, Dubai and Iraq. Request specifications from Mangal India.',
-    h1: 'Premium dry fruits, sourced across five countries.',
+      'Premium dates, pistachios, almonds and walnuts sourced from 12 countries, including Iran, Afghanistan, the USA and Chile. Request specifications.',
+    h1: 'Premium dry fruits, sourced across twelve countries.',
   },
   {
     path: '/global-network/',
     name: 'Global Network',
-    title: 'Global Network | 12 Sourcing Countries | Mangal India',
+    title: 'Global Network | 20 Sourcing Countries | Mangal India',
     description:
-      'See the 12 countries Mangal India sources premium fruits and dry fruits from, its India network and its export route to Dubai on one world map.',
+      'See the 20 countries Mangal India sources premium fruits and dry fruits from, its India network and its export route to Dubai on one world map.',
     h1: 'A world of premium produce, one trusted partner.',
   },
   {
@@ -67,11 +75,27 @@ export const routes = [
     h1: 'Four wholesale markets. Ten-plus distribution centres. All of India.',
   },
   {
+    path: '/global-network/global-offices/',
+    name: 'Global Offices',
+    title: 'Global Offices | Dubai, Iran, Turkey | Mangal India',
+    description:
+      'Mangal India’s global offices in Dubai, Iran and Turkey, with its head office in Pune, India. Find the right office for your trade enquiry.',
+    h1: 'Global offices, close to our key markets.',
+  },
+  {
+    path: '/farming-venture/',
+    name: 'Farming Venture',
+    title: 'Farming Venture | Our Own Farms | Mangal India',
+    description:
+      'Mangal India is a grower-exporter with over 100 acres of its own farming: the Yadgir farming project and pomegranate farms at Shikrapur, Pune.',
+    h1: 'Grower first. Exporter next.',
+  },
+  {
     path: '/exports/',
     name: 'Exports',
-    title: 'Exports | Premium Rice, Mangoes & Vegetables | Mangal India',
+    title: 'Exports | Indian Fruits, Vegetables & Rice | Mangal India',
     description:
-      'Premium basmati, 1121, non-basmati and Sona Masoori rice, plus mangoes and fresh vegetables by air, from India to Dubai and beyond.',
+      'A grower-exporter of mangoes, bananas, onions, pomegranates, grapes, chillies, vegetables and premium rice, from India to Dubai and beyond.',
     h1: 'Premium India, delivered to the world.',
   },
   {
@@ -111,7 +135,7 @@ export const routes = [
     name: 'International Buyers',
     title: 'International Buyers | Premium Indian Exports',
     description:
-      'Import premium basmati, 1121, non-basmati and Sona Masoori rice, mangoes and fresh vegetables from India with Mangal India.',
+      'Import premium Indian fruits, vegetables and rice from a grower-exporter with its own farms. Send an export enquiry to Mangal India.',
     h1: 'Importing from India? Start here.',
   },
   {
@@ -142,7 +166,7 @@ export const routes = [
     path: '/privacy-policy/',
     name: 'Privacy Policy',
     title: 'Privacy Policy | Mangal India',
-    description: 'How Mangal India · Krishna Mohan Exports collects and uses the details you submit through our enquiry forms.',
+    description: 'How Mangal India collects and uses the details you submit through our enquiry forms.',
     h1: 'Privacy Policy',
   },
   {

@@ -60,7 +60,7 @@ export default function AboutPage() {
       <StatsBand heading={null} />
 
       {/* Who we are + A premium range */}
-      <section className="py-24 lg:py-28">
+      <section className="py-16 sm:py-24 lg:py-28">
         <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <SectionHeading eyebrow="Our story" title={aboutPage.whoWeAre.heading} />
@@ -84,7 +84,7 @@ export default function AboutPage() {
                     to={product.category === 'fresh' ? '/products/fresh-fruits/' : '/products/dry-fruits/'}
                     className="group flex flex-col items-center gap-1.5 rounded-2xl bg-white p-2.5 text-center shadow-card transition hover:-translate-y-0.5 hover:shadow-lift"
                   >
-                    <ProduceArt type={product.slug} className="h-auto w-full transition-transform group-hover:scale-110" />
+                    <ProduceArt type={product.art} className="h-auto w-full transition-transform group-hover:scale-110" />
                     <span className="text-[11px] font-semibold leading-tight text-forest">{product.name}</span>
                   </Link>
                 </li>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   to="/products/"
                   className="flex h-full flex-col items-center justify-center gap-1 rounded-2xl bg-forest p-2.5 text-center text-white transition hover:-translate-y-0.5 hover:bg-forest-dark"
                 >
-                  <span className="font-display text-xl font-bold text-gold">16+</span>
+                  <span className="font-display text-xl font-bold text-gold">20+</span>
                   <span className="text-[11px] font-semibold leading-tight">All products</span>
                 </Link>
               </li>
@@ -104,10 +104,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our leadership */}
-      <section className="bg-sage py-24 lg:py-28">
+      <section className="bg-sage py-16 sm:py-24 lg:py-28">
         <Container>
-          <Reveal className="grid items-center gap-10 overflow-hidden rounded-[2rem] bg-white p-6 shadow-card sm:p-10 md:grid-cols-[minmax(0,280px)_1fr] lg:gap-14 lg:p-12">
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest">
+          <Reveal className="grid items-center gap-7 overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-card sm:gap-10 sm:rounded-[2rem] sm:p-10 md:grid-cols-[minmax(0,280px)_1fr] lg:gap-14 lg:p-12">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[220px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest sm:max-w-[280px]">
               {founder.portrait ? (
                 <img src={founder.portrait} alt={`Portrait of ${founder.name}, ${founder.title} of Mangal India.`} className="h-full w-full object-cover" />
               ) : (
@@ -129,8 +129,8 @@ export default function AboutPage() {
           </Reveal>
 
           {/* COO: mirrors the CEO card, portrait on the right from md up */}
-          <Reveal className="mt-8 grid items-center gap-10 overflow-hidden rounded-[2rem] bg-white p-6 shadow-card sm:p-10 md:grid-cols-[1fr_minmax(0,280px)] lg:mt-10 lg:gap-14 lg:p-12">
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest md:order-last">
+          <Reveal className="mt-5 grid items-center gap-7 overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-card sm:mt-8 sm:gap-10 sm:rounded-[2rem] sm:p-10 md:grid-cols-[1fr_minmax(0,280px)] lg:mt-10 lg:gap-14 lg:p-12">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[220px] overflow-hidden rounded-3xl bg-gradient-to-br from-forest-600 to-forest sm:max-w-[280px] md:order-last">
               <img src={aboutPage.coo.portrait} alt={`Portrait of ${aboutPage.coo.name}, ${aboutPage.coo.title} of Mangal India.`} className="h-full w-full object-cover" />
             </div>
             <div>
@@ -138,13 +138,16 @@ export default function AboutPage() {
               <p className="mt-5 text-[17px] leading-relaxed text-ink-muted">{aboutPage.coo.text}</p>
               <p className="mt-6 font-display text-xl font-semibold text-forest">{aboutPage.coo.name}</p>
               <p className="text-sm text-ink-muted">{aboutPage.coo.title}</p>
+              <Button to="/about/our-team/" variant="secondary" icon={ArrowRight} className="mt-8">
+                Meet Our Team
+              </Button>
             </div>
           </Reveal>
         </Container>
       </section>
 
       {/* Global sourcing */}
-      <section className="py-24 lg:py-28">
+      <section className="py-16 sm:py-24 lg:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectionHeading eyebrow="Global sourcing" title={aboutPage.sourcing.heading} intro={aboutPage.sourcing.text} />
@@ -176,7 +179,7 @@ export default function AboutPage() {
       </section>
 
       {/* Deep roots in India */}
-      <section className="overflow-hidden bg-sage py-24 lg:py-28">
+      <section className="overflow-hidden bg-sage py-16 sm:py-24 lg:py-28">
         <Container className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal className="relative order-last lg:order-first">
             <div aria-hidden="true" className="absolute inset-10 rounded-full bg-leaf-light blur-3xl" />

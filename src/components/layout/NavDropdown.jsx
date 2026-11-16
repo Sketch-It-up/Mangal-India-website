@@ -89,7 +89,14 @@ export default function NavDropdown({ group }) {
                           <Icon aria-hidden="true" className="h-5 w-5" />
                         </span>
                         <span>
-                          <span className="block text-sm font-semibold text-forest">{item.label}</span>
+                          <span className="flex items-center gap-2 text-sm font-semibold text-forest">
+                            {item.label}
+                            {item.badge && (
+                              <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-forest-dark">
+                                {item.badge}
+                              </span>
+                            )}
+                          </span>
                           <span className="block text-xs text-ink-muted">{item.description}</span>
                         </span>
                       </NavLink>

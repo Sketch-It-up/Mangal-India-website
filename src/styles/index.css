@@ -10,6 +10,7 @@
 
   body {
     @apply bg-cream font-sans text-ink antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1,
@@ -35,6 +36,15 @@
 }
 
 @layer utilities {
+  /* Swipeable rows (filter chips, country lists, video strips) without a visible scrollbar. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* A slow up-and-down float sized to the element (percent), for the hero's main images. */
   .animate-hover-float {
     animation: hover-float 5.5s ease-in-out infinite;

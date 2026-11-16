@@ -83,11 +83,11 @@ export default function StyleguidePage() {
               eyebrow="Section heading"
               accent="From the world’s orchards"
               title="Premium fruits. Premium dry fruits. Great quality."
-              intro="Nine fresh fruits and four dry fruits, selected for premium quality and supplied to buyers who expect more."
+              intro="Fresh fruits and dry fruits from 20 countries, selected for premium quality and supplied to buyers who expect more."
             />
             <div className="space-y-4 text-[17px] leading-relaxed">
               <p>
-                Body copy is Inter at 17–18px. Mangal India imports premium fruits and dry fruits from 12 countries across
+                Body copy is Inter at 17–18px. Mangal India imports premium fruits and dry fruits from 20 countries across
                 the world, brings them to Indian markets — and now exports premium Indian produce back out, beginning with
                 Dubai.
               </p>

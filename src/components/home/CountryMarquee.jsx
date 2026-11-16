@@ -20,7 +20,7 @@ function Row({ hidden = false }) {
   )
 }
 
-// Slow-scrolling strip of the 12 sourcing countries. The row is repeated so the loop is
+// Slow-scrolling strip of the sourcing countries. The row is repeated so the loop is
 // seamless; the copy is hidden from assistive tech. Pauses on hover, and sits still
 // (wrapped, centred) for reduced-motion users.
 export default function CountryMarquee() {

@@ -7,7 +7,7 @@ import { cn } from '@/lib/cn'
 // followed by the page's enquiry button (optional).
 export default function EnquiryChecklist({ heading, items, text, cta, columns = 2, className }) {
   return (
-    <Card className={cn('relative overflow-hidden p-7 sm:p-9', className)}>
+    <Card className={cn('relative overflow-hidden p-6 sm:p-9', className)}>
       <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-leaf via-gold to-tangerine" />
       <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-leaf-light text-leaf-dark">
         <ClipboardList aria-hidden="true" className="h-6 w-6" />
@@ -27,7 +27,7 @@ export default function EnquiryChecklist({ heading, items, text, cta, columns = 
         </ul>
       )}
       {cta && (
-        <Button to={cta.to} icon={ArrowRight} className="mt-8">
+        <Button to={cta.to} icon={ArrowRight} className="mt-7 w-full sm:mt-8 sm:w-auto">
           {cta.label}
         </Button>
       )}

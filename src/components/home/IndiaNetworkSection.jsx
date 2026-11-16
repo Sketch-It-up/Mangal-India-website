@@ -10,28 +10,28 @@ import { customerCities, wholesaleOutlets } from '@/data/network'
 // Section 5 — India network.
 export default function IndiaNetworkSection() {
   return (
-    <section className="overflow-hidden bg-sage py-24 lg:py-28">
-      <Container className="grid items-center gap-14 lg:grid-cols-2">
+    <section className="overflow-hidden bg-sage py-16 sm:py-24 lg:py-28">
+      <Container className="grid items-center gap-10 sm:gap-14 lg:grid-cols-2">
         <div>
           <SectionHeading eyebrow="India Network" title={indiaNetwork.heading} intro={indiaNetwork.text} />
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-white p-6 shadow-card">
-              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">Wholesale market outlets</h3>
+          <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4">
+            <div className="rounded-2xl bg-white p-4 shadow-card sm:p-6">
+              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">Wholesale market outlets</h3>
               <ul className="mt-4 space-y-2.5">
                 {wholesaleOutlets.map((city) => (
-                  <li key={city.id} className="flex items-center gap-3 font-display text-lg font-semibold text-forest">
+                  <li key={city.id} className="flex items-center gap-2.5 font-display text-base font-semibold text-forest sm:gap-3 sm:text-lg">
                     <span aria-hidden="true" className="h-3 w-3 rounded-full bg-forest ring-4 ring-leaf/30" />
                     {city.name}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl bg-white p-6 shadow-card">
-              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">Pan-India customers</h3>
+            <div className="rounded-2xl bg-white p-4 shadow-card sm:p-6">
+              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">Pan-India customers</h3>
               <ul className="mt-4 space-y-2.5">
                 {customerCities.map((city) => (
-                  <li key={city.id} className="flex items-center gap-3 text-[17px] font-medium text-ink">
+                  <li key={city.id} className="flex items-center gap-2.5 text-[15px] font-medium text-ink sm:gap-3 sm:text-[17px]">
                     <span aria-hidden="true" className="h-3 w-3 rounded-full border-[2.5px] border-tangerine-dark" />
                     {city.name}
                   </li>
@@ -40,7 +40,7 @@ export default function IndiaNetworkSection() {
             </div>
           </div>
 
-          <div className="mt-4 flex items-center gap-4 rounded-2xl bg-forest p-5 text-white">
+          <div className="mt-3 flex items-center gap-4 rounded-2xl bg-forest p-4 text-white sm:mt-4 sm:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-leaf">
               <Warehouse aria-hidden="true" className="h-6 w-6" />
             </span>
@@ -50,7 +50,7 @@ export default function IndiaNetworkSection() {
             </p>
           </div>
 
-          <Button to={indiaNetwork.cta.to} icon={ArrowRight} className="mt-8">
+          <Button to={indiaNetwork.cta.to} icon={ArrowRight} className="mt-6 w-full sm:mt-8 sm:w-auto">
             {indiaNetwork.cta.label}
           </Button>
         </div>

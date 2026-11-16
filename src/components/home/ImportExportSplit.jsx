@@ -9,7 +9,7 @@ import { importExport } from '@/data/home'
 
 function ArtCluster({ types }) {
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute -bottom-4 -right-4 flex w-56 items-end sm:w-64">
+    <div aria-hidden="true" className="pointer-events-none absolute -bottom-4 -right-4 flex w-44 items-end sm:w-64">
       {types.map((type, i) => (
         <ProduceArt key={type} type={type} className={i === 1 ? 'z-10 -mx-6 w-[44%]' : 'w-[38%]'} />
       ))}
@@ -22,29 +22,29 @@ export default function ImportExportSplit() {
   const { import: imp, export: exp } = importExport
 
   return (
-    <section className="py-24 lg:py-28">
+    <section className="py-16 sm:py-24 lg:py-28">
       <Container>
         <SectionHeading align="center" eyebrow="Import · Export" title={importExport.heading} />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          <Reveal className="relative overflow-hidden rounded-3xl bg-sage p-8 pb-48 sm:p-10 sm:pb-52 lg:pb-10">
+        <div className="mt-8 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2">
+          <Reveal className="relative overflow-hidden rounded-3xl bg-sage p-6 pb-28 sm:p-10 sm:pb-52 lg:pb-10">
             <Badge tone="leaf" icon={ArrowDownLeft}>
               {imp.tag}
             </Badge>
-            <h3 className="mt-5 font-display text-4xl font-bold text-forest">{imp.label}</h3>
-            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-ink-muted lg:max-w-[58%]">{imp.text}</p>
-            <Button to={imp.cta.to} icon={ArrowRight} className="mt-8">
+            <h3 className="mt-4 font-display text-3xl font-bold text-forest sm:mt-5 sm:text-4xl">{imp.label}</h3>
+            <p className="mt-3 max-w-md text-base leading-relaxed text-ink-muted sm:mt-4 sm:text-[17px] lg:max-w-[58%]">{imp.text}</p>
+            <Button to={imp.cta.to} icon={ArrowRight} className="mt-6 sm:mt-8">
               {imp.cta.label}
             </Button>
             <ArtCluster types={['apples', 'kiwi', 'almonds']} />
           </Reveal>
 
-          <Reveal delay={0.1} className="relative overflow-hidden rounded-3xl bg-forest p-8 pb-48 text-white sm:p-10 sm:pb-52 lg:pb-10">
+          <Reveal delay={0.1} className="relative overflow-hidden rounded-3xl bg-forest p-6 pb-28 text-white sm:p-10 sm:pb-52 lg:pb-10">
             <Badge tone="light-gold" icon={ArrowUpRight}>
               {exp.tag}
             </Badge>
-            <h3 className="mt-5 font-display text-4xl font-bold text-white">{exp.label}</h3>
-            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-white/75 lg:max-w-[58%]">{exp.text}</p>
-            <Button to={exp.cta.to} variant="accent" icon={ArrowRight} className="mt-8">
+            <h3 className="mt-4 font-display text-3xl font-bold text-white sm:mt-5 sm:text-4xl">{exp.label}</h3>
+            <p className="mt-3 max-w-md text-base leading-relaxed text-white/75 sm:mt-4 sm:text-[17px] lg:max-w-[58%]">{exp.text}</p>
+            <Button to={exp.cta.to} variant="accent" icon={ArrowRight} className="mt-6 sm:mt-8">
               {exp.cta.label}
             </Button>
             <ArtCluster types={['rice', 'mangoes', 'vegetables']} />

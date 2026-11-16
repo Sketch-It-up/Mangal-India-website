@@ -6,18 +6,18 @@ const globalMap = { label: 'Explore the Global Map', to: '/global-network/' }
 
 export const aboutPage = {
   intro:
-    'Mangal India is an importer and exporter of premium fresh and dry fruits. We import from 12 countries, supply commercial buyers across India through four wholesale market outlets and more than ten distribution centres, and export premium Indian rice, mangoes and vegetables, beginning with Dubai.',
+    'Mangal India is an importer and exporter of premium fresh and dry fruits. We import from 20 countries, supply commercial buyers across India through four wholesale market outlets and more than ten distribution centres, and export premium Indian fruits, vegetables and rice as a grower-exporter, beginning with Dubai.',
   whoWeAre: {
     heading: 'Who we are',
     text: 'We are fruit traders, with more than eight years of experience and over 400 containers behind us. Our work is simple to describe and hard to do well: find premium produce, bring it to market in great condition and supply it to buyers who depend on us.',
   },
   range: {
     heading: 'A premium range',
-    text: 'We trade nine fresh fruits — apples, oranges, mandarins, kiwi, dragon fruit, pears, cherries, plums and nectarines — and four dry fruits: dates, pistachios, almonds and walnuts. Our full range runs to more than 16 products.',
+    text: 'We trade premium fresh fruits — apples, pears, oranges, kiwi, mandarins, dragon fruit and cherries, along with Thai fruits such as mangosteen, rambutan and durian — and four dry fruits: dates, pistachios, almonds and walnuts. Our full range runs to more than 20 products.',
   },
   sourcing: {
     heading: 'Global sourcing',
-    text: 'Our fresh fruits come from Turkey, South Africa, New Zealand, China, Italy, the USA, Chile and Poland. Our dry fruits come from Chile, Afghanistan, Oman, Dubai and Iraq. Twelve countries, six continents, one trusted partner.',
+    text: 'Our fresh fruits come from Turkey, Iran, Chile, New Zealand, the USA, Poland, Afghanistan, Italy, South Africa, Egypt, China, Vietnam, Australia and Thailand. Our dry fruits come from Afghanistan, Iran, the USA, Chile, Dubai, Oman, Saudi Arabia, Israel, Jordan, Tunisia, Turkey and Thailand. Twenty countries, six continents, one trusted partner.',
   },
   india: {
     heading: 'Deep roots in India',
@@ -30,15 +30,15 @@ export const aboutPage = {
   },
   coo: {
     name: 'Pandurang Ped',
-    title: 'Chief Operating Officer',
+    title: 'Head of Operations',
     portrait: '/images/coo.jpg',
     heading: 'Running our operations',
     // [CONFIRM: COO bio wording with the client]
-    text: 'As Chief Operating Officer, Pandurang Ped oversees Mangal India’s day-to-day operations, from sourcing and shipment coordination to warehousing and distribution, so premium produce reaches buyers on time and in great condition.',
+    text: 'As Head of Operations, Pandurang Ped oversees Mangal India’s day-to-day operations, from sourcing and shipment coordination to warehousing and distribution, so premium produce reaches buyers on time and in great condition.',
   },
   world: {
     heading: 'India to the world',
-    text: 'Our next chapter takes premium Indian produce abroad. We are exporting basmati, 1121, non-basmati and Sona Masoori rice, with fresh vegetables and mangoes by air, and Mangal India is set to open its own premium retail shop in Dubai.',
+    text: 'Our next chapter takes premium Indian produce abroad. As a grower-exporter with over 100 acres of our own farming, we are exporting mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, along with premium rice, and Mangal India is set to open its own premium retail shop in Dubai.',
     ctas: [trade, globalMap],
   },
 }
@@ -49,19 +49,19 @@ export const founderPage = {
 
 export const productsPage = {
   intro:
-    'Mangal India trades 16+ products, led by nine fresh fruits and four dry fruits sourced from premium growing regions around the world, and an export range of rice, mangoes and vegetables from India.',
+    'Mangal India trades 20+ products, led by fresh fruits and dry fruits sourced from premium growing regions around the world, and an export range of fruits, vegetables and rice from India.',
   categories: [
     {
       id: 'fresh',
       name: 'Fresh Fruits',
-      products: 'Apples, oranges, mandarins, kiwi, dragon fruit, pears, cherries, plums, nectarines',
+      products: 'Apples, pears, oranges, kiwi, mandarins, dragon fruit, cherries, Thai fruits and more',
       to: '/products/fresh-fruits/',
     },
     { id: 'dry', name: 'Dry Fruits', products: 'Dates, pistachios, almonds, walnuts', to: '/products/dry-fruits/' },
     {
       id: 'export',
       name: 'Export Range',
-      products: 'Basmati, 1121, non-basmati and Sona Masoori rice; mangoes; fresh vegetables',
+      products: 'Mangoes, bananas, onions, pomegranates, grapes, chillies and vegetables; basmati and non-basmati rice',
       to: '/exports/',
     },
   ],
@@ -71,7 +71,7 @@ export const productsPage = {
 
 export const freshFruitsPage = {
   intro:
-    'Nine premium fruits, sourced from Turkey, South Africa, New Zealand, China, Italy, the USA, Chile and Poland and supplied to wholesale buyers across India through our outlets in Mumbai, Chennai, Delhi and Bengaluru.',
+    'Premium fresh fruits, sourced from 14 countries — from Turkey, Iran and Chile to New Zealand, South Africa and Thailand — and supplied to wholesale buyers across India through our outlets in Mumbai, Chennai, Delhi and Bengaluru.',
   enquire: {
     heading: 'Enquire',
     text: 'Tell us the product, quantity, city and timing. We confirm specifications and availability, then quote for your requirement.',
@@ -82,7 +82,7 @@ export const freshFruitsPage = {
 
 export const dryFruitsPage = {
   intro:
-    'Dates, pistachios, almonds and walnuts — premium dry fruits sourced from Chile, Afghanistan, Oman, Dubai and Iraq, for wholesale and repack buyers who want great quality and dependable supply.',
+    'Dates, pistachios, almonds and walnuts — premium dry fruits sourced from Afghanistan, Iran, the USA, Chile, Dubai, Oman, Saudi Arabia, Israel, Jordan, Tunisia, Turkey and Thailand, for wholesale and repack buyers who want great quality and dependable supply.',
   enquire: {
     heading: 'Enquire',
     text: 'Share the product, form, quantity, location and timing. We confirm specifications and availability and quote for your requirement.',
@@ -93,14 +93,14 @@ export const dryFruitsPage = {
 
 export const globalNetworkPage = {
   intro:
-    'Mangal India sources premium fruits and dry fruits from 12 countries across six continents, supplies buyers across India, and now exports premium Indian produce to Dubai and beyond. Explore the map.',
+    'Mangal India sources premium fruits and dry fruits from 20 countries across six continents, supplies buyers across India, and now exports premium Indian produce to Dubai and beyond. Explore the map.',
   sourceHeading: 'Where we source',
   supply: {
     heading: 'Where we supply',
     india:
       'In India: wholesale market outlets in Mumbai, Chennai, Delhi and Bengaluru, more than ten distribution centres, and customers in cities including Ahmedabad, Pune, Kochi, Kolkata and Jaipur.',
     abroad:
-      'Abroad: Dubai, where we are exporting premium rice, mangoes and vegetables and opening our own premium retail shop.',
+      'Abroad: Dubai, where we are exporting premium Indian fruits, vegetables and rice and opening our own premium retail shop, supported by global offices in Dubai, Iran and Turkey.',
   },
   // "Teal" in the build document reads "Green" in the green theme. [CONFIRM: client approval of wording]
   howToRead: {
@@ -108,7 +108,7 @@ export const globalNetworkPage = {
     items: [
       { key: 'fresh', label: 'Green', text: 'fresh-fruit sourcing country' },
       { key: 'dry', label: 'Orange', text: 'dry-fruit sourcing country' },
-      { key: 'both', label: 'Green and orange', text: 'both (Chile)' },
+      { key: 'both', label: 'Green and orange', text: 'both fresh and dry fruits' },
       { key: 'india', label: 'Dark green with a gold outline', text: 'India, our home market' },
       { key: 'dubai', label: 'Gold ring', text: 'Dubai: sourcing hub and first export destination' },
       { key: 'arcs', label: 'Animated arcs', text: 'trade flowing into India, and premium Indian produce flowing out to Dubai' },
@@ -134,7 +134,7 @@ export const indiaDistributionPage = {
 
 export const exportsPage = {
   intro:
-    'Mangal India has spent eight years bringing the world’s best harvests to India. Now we are doing the same in reverse: exporting premium Indian produce, beginning with Dubai.',
+    'Mangal India has spent eight years bringing the world’s best harvests to India. Now we are doing the same in reverse: exporting premium Indian produce as a grower-exporter, beginning with Dubai.',
   rangeHeading: 'Our export range',
   range: [
     { slug: 'rice', title: 'Premium rice', text: 'Basmati, 1121, non-basmati, Sona Masoori and other varieties.', to: '/exports/rice/' },
@@ -156,6 +156,16 @@ export const exportsPage = {
   },
   cta: { label: 'Send an Export Enquiry', to: '/trade-with-us/international-buyers/' },
   secondaryCta: { label: 'See the Dubai Retail Shop', to: '/exports/dubai-retail-shop/' },
+}
+
+// Grower-exporter positioning and the fresh-produce list (client feedback, November 2026).
+export const exportsGrower = {
+  eyebrow: 'Grower-exporter',
+  heading: 'We grow what we export.',
+  text: 'Our approach to exports is simple: grower-exporter. Mangal India runs its own farming venture across more than 100 acres, with live farms at Yadgir and at Shikrapur in Pune district, owned by us and built on our own investment.',
+  cta: { label: 'Visit Our Farming Venture', to: '/farming-venture/' },
+  produceHeading: 'Fresh produce from India',
+  produce: ['Mangoes', 'Bananas', 'Onions', 'Pomegranates', 'Grapes', 'Chillies', 'Vegetables'],
 }
 
 export const ricePage = {
@@ -197,7 +207,7 @@ export const indianBuyersPage = {
 }
 
 export const internationalBuyersPage = {
-  intro: 'Mangal India exports premium rice, mangoes and fresh vegetables, starting with Dubai and the Gulf.',
+  intro: 'Mangal India is a grower-exporter of mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, along with premium rice, starting with Dubai and the Gulf.',
   checklistHeading: 'Please send',
   checklist: ['Product and variety', 'Packaging and quantity', 'Destination', 'Target shipment window', 'Documents you require'],
   secondaryCta: { label: 'View Exports', to: '/exports/' },
@@ -205,7 +215,7 @@ export const internationalBuyersPage = {
 
 export const suppliersPage = {
   intro:
-    'Mangal India works with sources across 12 countries. If you grow, pack or export premium fruits or dry fruits, we would like to hear from you.',
+    'Mangal India works with sources across 20 countries. If you grow, pack or export premium fruits or dry fruits, we would like to hear from you.',
   checklistHeading: 'Please send',
   checklist: ['Products and varieties', 'Country of origin', 'Grades and packing', 'Season and volumes', 'Certifications you hold'],
   secondaryCta: { label: 'View the Global Map', to: '/global-network/' },
@@ -234,7 +244,7 @@ export const thankYouPage = {
 
 // Draft legal copy (Section 16). Must be reviewed by a qualified lawyer before launch.
 export const privacyPolicy =
-  'Mangal India · Krishna Mohan Exports (“we”) collects the details you submit through our enquiry forms — such as your name, company, email, phone and enquiry details — to respond to you and manage our business relationship. We do not sell your information. We may share it with service providers that host our website, send email or manage our records, under confidentiality terms. We use cookies and analytics to understand how the website is used and ask for your consent where required. To access, correct or delete your information, contact'
+  'Mangal India (“we”) collects the details you submit through our enquiry forms — such as your name, company, email, phone and enquiry details — to respond to you and manage our business relationship. We do not sell your information. We may share it with service providers that host our website, send email or manage our records, under confidentiality terms. We use cookies and analytics to understand how the website is used and ask for your consent where required. To access, correct or delete your information, contact'
 
 export const termsOfUse =
-  'This website is provided by Mangal India · Krishna Mohan Exports for general information. Content on this website is not an offer to sell and does not create a contract. Products, specifications, availability and prices are confirmed in writing for each transaction. Content and images may not be copied without permission. We aim to keep information accurate but do not warrant that it is complete or current. These terms are governed by the laws of India.'
+  'This website is provided by Mangal India for general information. Content on this website is not an offer to sell and does not create a contract. Products, specifications, availability and prices are confirmed in writing for each transaction. Content and images may not be copied without permission. We aim to keep information accurate but do not warrant that it is complete or current. These terms are governed by the laws of India.'

@@ -14,11 +14,16 @@ const contact = [
 ]
 
 export const importProducts = [
-  'Apples', 'Oranges', 'Mandarins', 'Kiwi', 'Dragon Fruit', 'Pears', 'Cherries', 'Plums', 'Nectarines',
+  'Apples', 'Pears', 'Oranges', 'Kiwi', 'Mandarins', 'Dragon Fruit', 'Cherries',
+  'Thai Mangoes', 'Coconuts', 'Mangosteen', 'Rambutan', 'Durian', 'Tamarind',
+  'Plums', 'Blueberries', 'Avocados', 'Nectarines', 'Peaches', 'Persimmons',
   'Dates', 'Pistachios', 'Almonds', 'Walnuts', 'Other',
 ]
 
-export const exportProducts = ['Basmati', '1121', 'Non-basmati', 'Sona Masoori', 'Other rice', 'Mangoes', 'Vegetables', 'Other']
+export const exportProducts = [
+  'Mangoes', 'Bananas', 'Onions', 'Pomegranates', 'Grapes', 'Chillies', 'Vegetables',
+  'Basmati', '1121', 'Non-basmati', 'Sona Masoori', 'Other rice', 'Other',
+]
 
 // Keyed by enquiry type. `routing` is the desk each form goes to (Section 13, Processing).
 export const forms = {

@@ -7,7 +7,7 @@ import { formCopy, forms, validateEnquiry } from '@/data/forms'
 
 const inputClasses = (invalid) =>
   cn(
-    'block w-full rounded-xl border bg-white px-4 text-[15px] text-ink shadow-sm transition placeholder:text-ink-muted/60',
+    'block w-full rounded-xl border bg-white px-4 text-base text-ink sm:text-[15px] shadow-sm transition placeholder:text-ink-muted/60',
     'focus:outline-none focus:ring-4',
     invalid ? 'border-pomegranate focus:border-pomegranate focus:ring-pomegranate/15' : 'border-forest/15 focus:border-leaf-dark focus:ring-leaf/25',
   )
@@ -244,7 +244,7 @@ export default function EnquiryForm({ type, initialValues, inline = false, class
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-btn bg-forest px-7 text-[15px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-forest-dark hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
+        className="mt-8 inline-flex h-12 w-full items-center sm:w-auto justify-center gap-2 rounded-btn bg-forest px-7 text-[15px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-forest-dark hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
       >
         {status === 'sending' ? (
           <>

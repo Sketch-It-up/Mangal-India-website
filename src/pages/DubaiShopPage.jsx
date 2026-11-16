@@ -68,19 +68,19 @@ export default function DubaiShopPage() {
       />
 
       {/* What you will find */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading align="center" eyebrow="In store" title={page.offersHeading} />
-          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+          <ul className="mt-8 grid gap-3 sm:mt-12 sm:gap-6 md:grid-cols-3">
             {dubaiShop.offers.map((offer, i) => (
               <Reveal as="li" key={offer} delay={i * 0.08}>
-                <div className="flex h-full flex-col items-center rounded-[1.75rem] bg-white p-8 text-center shadow-card">
-                  <div className={`flex h-36 w-36 items-center justify-center gap-1 rounded-full ${offerArt[i].bg}`}>
+                <div className="flex h-full items-center gap-5 rounded-3xl bg-white p-4 shadow-card sm:flex-col sm:gap-0 sm:rounded-[1.75rem] sm:p-8 sm:text-center">
+                  <div className={`flex h-20 w-20 shrink-0 items-center justify-center gap-1 rounded-full sm:h-36 sm:w-36 ${offerArt[i].bg}`}>
                     {offerArt[i].types.map((type) => (
                       <ProduceArt key={type} type={type} className={offerArt[i].types.length > 1 ? 'h-auto w-[42%]' : 'h-auto w-[66%]'} />
                     ))}
                   </div>
-                  <h3 className="mt-6 font-display text-2xl font-semibold text-forest">{offer}</h3>
+                  <h3 className="font-display text-xl font-semibold text-forest sm:mt-6 sm:text-2xl">{offer}</h3>
                 </div>
               </Reveal>
             ))}
@@ -89,7 +89,7 @@ export default function DubaiShopPage() {
       </section>
 
       {/* Why Dubai */}
-      <section className="bg-sage py-20 lg:py-24">
+      <section className="bg-sage py-14 sm:py-20 lg:py-24">
         <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeading eyebrow="Our first export destination" title={page.why.heading} intro={page.why.text} />
@@ -121,7 +121,7 @@ export default function DubaiShopPage() {
       </section>
 
       {/* Updates sign-up (Form D) */}
-      <section id="updates" className="scroll-mt-24 py-20 lg:py-24">
+      <section id="updates" className="scroll-mt-24 py-14 sm:py-20 lg:py-24">
         <Container>
           <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] bg-forest p-6 sm:p-10 lg:grid-cols-2 lg:p-14">
             <div aria-hidden="true" className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />

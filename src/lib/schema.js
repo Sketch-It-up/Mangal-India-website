@@ -11,7 +11,6 @@ export function organizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: site.name,
-    alternateName: site.subtext,
     url: absolute('/'),
     logo: site.logo ? absolute(site.logo) : undefined,
     email: site.contact.email ?? undefined,
