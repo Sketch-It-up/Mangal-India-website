@@ -326,6 +326,20 @@ function Vegetables() {
   )
 }
 
+// Stand-in for products that have no photo or illustration of their own yet.
+function Generic() {
+  return (
+    <>
+      <Shadow />
+      <circle cx="60" cy="68" r="34" fill="#8BC34A" />
+      <path d="M60 34a34 34 0 0 1 0 68z" fill="#5DA035" opacity=".35" />
+      <Shine cx="46" cy="56" rx="6" ry="11" transform="rotate(24 46 56)" />
+      <path d="M60 36c0-7 2-12 6-16" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M65 23c8-9 22-8 27 0-9 8-20 7-27 0z" fill={LEAF} />
+    </>
+  )
+}
+
 const arts = {
   apples: Apples,
   oranges: Oranges,
@@ -362,8 +376,7 @@ export default function ProduceArt({ type, title, className, loading = 'lazy' })
     )
   }
 
-  const Art = arts[type]
-  if (!Art) return null
+  const Art = arts[type] ?? Generic
 
   return (
     <svg

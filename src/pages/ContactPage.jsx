@@ -44,12 +44,12 @@ export default function ContactPage() {
       <Seo title={route.title} description={route.description} path={route.path} />
       <PageHero route={route} eyebrow="Business Enquiry" intro={contactPage.intro} tight />
 
-      <section className="pb-24 lg:pb-28">
+      <section className="pb-16 sm:pb-24 lg:pb-28">
         <Container className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <Card className="p-6 sm:p-10 lg:col-span-8">
+          <Card className="p-5 sm:p-10 lg:col-span-8">
             <fieldset>
               <legend className="font-display text-2xl font-bold text-forest">{contactPage.selectorLabel}</legend>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-3">
                 {options.map((option) => {
                   const Icon = typeIcons[option]
                   const checked = type === option
@@ -57,7 +57,7 @@ export default function ContactPage() {
                     <label
                       key={option}
                       className={cn(
-                        'flex cursor-pointer items-center gap-3 rounded-2xl border-2 p-4 text-sm font-semibold transition',
+                        'flex cursor-pointer flex-col items-start gap-2.5 rounded-2xl border-2 p-3.5 text-[13px] font-semibold leading-snug transition sm:flex-row sm:items-center sm:gap-3 sm:p-4 sm:text-sm',
                         'has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-leaf/30',
                         checked ? 'border-leaf-dark bg-leaf-light text-leaf-dark' : 'border-forest/10 bg-white text-ink hover:border-forest/25',
                       )}
@@ -85,7 +85,7 @@ export default function ContactPage() {
           </Card>
 
           <div className="space-y-6 lg:col-span-4">
-            <Card className="p-7">
+            <Card className="p-6 sm:p-7">
               <h2 className="font-display text-2xl font-bold text-forest">Direct contact</h2>
               <dl className="mt-6 space-y-5">
                 {direct.map(({ icon: Icon, label, value, confirm, href }) => (
@@ -104,7 +104,7 @@ export default function ContactPage() {
               </dl>
             </Card>
 
-            <Card className="p-7">
+            <Card className="p-6 sm:p-7">
               <h2 className="font-display text-2xl font-bold text-forest">Choose a Pathway</h2>
               <ul className="mt-4 divide-y divide-forest/10">
                 {pathways.items.map((item) => (

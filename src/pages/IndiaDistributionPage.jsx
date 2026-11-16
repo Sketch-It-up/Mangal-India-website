@@ -66,7 +66,7 @@ export default function IndiaDistributionPage() {
       </section>
 
       {/* Distribution centres + customer cities */}
-      <section className="py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container className="grid gap-6 lg:grid-cols-2">
           <Reveal className="relative overflow-hidden rounded-[2rem] bg-gold-light p-8 sm:p-10">
             <div aria-hidden="true" className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-gold/30 blur-2xl" />

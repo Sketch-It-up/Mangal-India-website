@@ -22,7 +22,7 @@ export default function StickyEnquiryBar() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-forest/10 bg-white/95 p-3 shadow-header backdrop-blur-md lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-forest/10 bg-white/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-header backdrop-blur-md lg:hidden"
           initial={{ y: '100%' }}
           animate={{ y: 0 }}
           exit={{ y: '100%' }}

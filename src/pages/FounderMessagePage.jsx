@@ -19,7 +19,7 @@ export default function FounderMessagePage() {
       <Seo title={route.title} description={route.description} path={route.path} />
       <PageHero route={route} eyebrow="Founder’s Message" tight />
 
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-16 sm:pb-24 lg:pb-32">
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">

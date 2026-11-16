@@ -2,6 +2,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import Seo from '@/components/seo/Seo'
 import CountryMarquee from '@/components/home/CountryMarquee'
 import ExportsDubaiSection from '@/components/home/ExportsDubaiSection'
+import FeaturedPages from '@/components/home/FeaturedPages'
 import FinalCta from '@/components/home/FinalCta'
 import FounderFeature from '@/components/home/FounderFeature'
 import HeroSection from '@/components/home/HeroSection'
@@ -30,6 +31,7 @@ export default function HomePage() {
       <StatsBand bridge="bg-white" overlap={false} />
       <FounderFeature />
       <ImportExportSplit />
+      <FeaturedPages />
       <WorldMapSection />
       <CountryMarquee />
       <ProductPortfolio />

@@ -23,7 +23,9 @@ function RouteEffects() {
 
 export default function Layout() {
   return (
-    <div className="flex min-h-screen flex-col">
+    // overflow-x-clip: nothing may push the page wider than the screen (carousels peek past
+    // their container). `clip`, unlike `hidden`, keeps the sticky header working.
+    <div className="flex min-h-screen flex-col overflow-x-clip">
       <a href="#main" className="skip-link">
         Skip to content
       </a>

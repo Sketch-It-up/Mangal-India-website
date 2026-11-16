@@ -33,7 +33,7 @@ export default function LegalPage({ path }) {
     <>
       <Seo title={route.title} description={route.description} path={route.path} />
       <PageHero route={route} eyebrow="Legal" tight />
-      <section className="pb-24 lg:pb-28">
+      <section className="pb-16 sm:pb-24 lg:pb-28">
         <Container>
           <div className="max-w-3xl rounded-[1.75rem] bg-white p-7 text-lg leading-[1.8] text-ink shadow-card sm:p-10 [&_a]:font-semibold [&_a]:text-leaf-dark [&_a]:underline">
             {content[path]}

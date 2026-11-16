@@ -17,7 +17,7 @@ export default function CountryChips({ countries, label, className }) {
         {countries.map((country) => (
           <li
             key={country.id}
-            className="inline-flex items-center gap-2 rounded-xl border border-forest/10 bg-white px-3.5 py-2 text-sm font-medium text-ink shadow-sm"
+            className="inline-flex items-center gap-2 rounded-xl border border-forest/10 bg-white px-3 py-1.5 text-sm font-medium text-ink shadow-sm sm:px-3.5 sm:py-2"
           >
             <span aria-hidden="true" className={cn('h-2.5 w-2.5 rounded-full', dots[kind(country)])} />
             {country.name}

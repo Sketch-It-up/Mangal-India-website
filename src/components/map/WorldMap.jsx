@@ -118,7 +118,7 @@ export default function WorldMap({ className }) {
               viewBox={`0 0 ${WIDTH} ${geo.height}`}
               className="block h-auto w-full"
               role="group"
-              aria-label="World map of Mangal India's 12 sourcing countries, India and the export route to Dubai"
+              aria-label={`World map of Mangal India's ${sourcingCountries.length} sourcing countries, India and the export route to Dubai`}
               onClick={() => setActive(null)}
             >
               <defs>
@@ -320,7 +320,7 @@ export default function WorldMap({ className }) {
                   animate={drawn ? { opacity: 1, y: 0 } : undefined}
                   transition={{ delay: outboundDelay + 0.6 }}
                 >
-                  Rice · Mangoes · Vegetables · Premium Retail Shop
+                  Fruits · Vegetables · Rice · Premium Retail Shop
                 </motion.span>
               </div>
             </div>

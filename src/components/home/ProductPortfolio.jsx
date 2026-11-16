@@ -28,12 +28,12 @@ export default function ProductPortfolio() {
   const filter = filters.find((f) => f.id === filterId)
 
   return (
-    <section className="py-24 lg:py-28">
+    <section className="py-16 sm:py-24 lg:py-28">
       <Container>
         <SectionHeading eyebrow="Our Range" title={portfolio.heading} intro={portfolio.intro} />
-        <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter products">
+        <div className="no-scrollbar -mx-4 mt-6 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:mt-8 sm:flex-wrap sm:overflow-visible sm:px-0" role="group" aria-label="Filter products">
           {filters.map((f) => (
-            <Chip key={f.id} icon={f.icon} active={filterId === f.id} onClick={() => setFilterId(f.id)}>
+            <Chip key={f.id} icon={f.icon} active={filterId === f.id} onClick={() => setFilterId(f.id)} className="shrink-0 whitespace-nowrap">
               {f.label}
               <span className="text-xs opacity-60">{f.items.length}</span>
             </Chip>
@@ -42,13 +42,13 @@ export default function ProductPortfolio() {
 
         <Carousel
           key={filterId}
-          className="mt-10"
+          className="mt-7 sm:mt-10"
           label={`${filter.label} carousel`}
           items={filter.items}
           renderItem={(product) => <ProductCard product={product} />}
         />
 
-        <dl className="mt-12 grid gap-4 rounded-2xl border border-forest/10 bg-white/60 p-6 text-sm md:grid-cols-3">
+        <dl className="mt-8 grid gap-4 rounded-2xl border border-forest/10 bg-white/60 p-5 text-sm sm:mt-12 sm:p-6 md:grid-cols-3">
           {summary.map((row) => (
             <div key={row.label}>
               <dt className="font-semibold text-forest">{row.label}</dt>
@@ -57,7 +57,7 @@ export default function ProductPortfolio() {
           ))}
         </dl>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-6 grid gap-3 sm:mt-8 sm:flex sm:flex-wrap">
           {portfolio.ctas.map((cta) => (
             <Button key={cta.to} to={cta.to} variant="secondary" icon={ArrowRight}>
               {cta.label}

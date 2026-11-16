@@ -17,7 +17,7 @@ export default function StatsBand({ heading = statsHeading, bridge, overlap = tr
     <section aria-labelledby="stats-heading" className={cn('relative z-10', overlap ? '-mt-20 lg:-mt-24' : 'pt-4 lg:pt-6')}>
       {bridge && <div aria-hidden="true" className={cn('absolute inset-x-0 bottom-0 top-1/2', bridge)} />}
       <Container className="relative">
-        <div className="relative overflow-hidden rounded-[28px] bg-forest px-6 py-10 text-white shadow-lift sm:px-10 lg:px-12 lg:py-12">
+        <div className="relative overflow-hidden rounded-[28px] bg-forest px-5 py-8 text-white shadow-lift sm:px-10 sm:py-10 lg:px-12 lg:py-12">
           <svg aria-hidden="true" className="absolute -right-10 -top-10 h-64 w-64 text-white/[0.04]" viewBox="0 0 100 100">
             <path d="M50 5C75 20 90 45 85 70 75 90 50 95 30 85 10 70 15 40 50 5z" fill="currentColor" />
           </svg>
@@ -33,7 +33,7 @@ export default function StatsBand({ heading = statsHeading, bridge, overlap = tr
               Mangal India in numbers
             </h2>
           )}
-          <dl className={cn('relative grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-5 lg:gap-0', heading && 'mt-10')}>
+          <dl className={cn('relative grid grid-cols-2 gap-x-5 gap-y-7 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-5 lg:gap-0', heading && 'mt-8 sm:mt-10')}>
             {stats.map((stat, i) => {
               const Icon = icons[i]
               return (
@@ -42,19 +42,19 @@ export default function StatsBand({ heading = statsHeading, bridge, overlap = tr
                   delay={i * 0.08}
                   className={cn(
                     'flex flex-col',
-                    i === stats.length - 1 && 'col-span-2 lg:col-span-1',
+                    i === stats.length - 1 && 'col-span-2 border-t border-white/10 pt-6 sm:border-0 sm:pt-0 lg:col-span-1',
                     i > 0 && 'lg:border-l lg:border-white/10 lg:pl-6',
                     i < stats.length - 1 && 'lg:pr-6',
                   )}
                 >
-                  <dt className="order-2 mt-3 text-sm font-semibold text-white">{stat.label}</dt>
+                  <dt className="order-2 mt-2 text-sm font-semibold leading-snug text-white sm:mt-3">{stat.label}</dt>
                   <dd className="order-1 flex items-center gap-3 lg:flex-col lg:items-start lg:gap-4">
                     <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-leaf sm:flex">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
                     <Counter value={stat.value} suffix={stat.suffix} className="font-display text-4xl font-bold leading-none tracking-tight sm:text-[2.5rem] xl:text-[3.25rem]" />
                   </dd>
-                  <dd className="order-3 mt-1 text-sm leading-relaxed text-white/65">{stat.line}</dd>
+                  <dd className="order-3 mt-1 hidden text-sm leading-relaxed text-white/65 sm:block">{stat.line}</dd>
                 </Reveal>
               )
             })}

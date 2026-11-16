@@ -58,7 +58,7 @@ const sections = [
   {
     id: 'export',
     title: 'Export Range',
-    meta: 'Rice, mangoes and fresh vegetables from India',
+    meta: 'Fruits, vegetables and rice from India',
     items: exportItems,
     cta: { label: 'Explore Exports', to: '/exports/' },
   },
@@ -93,7 +93,7 @@ export default function ProductsPage() {
       <section className="pb-8 pt-4">
         <Container>
           <h2 className="sr-only">Product categories</h2>
-          <ul className="grid gap-6 md:grid-cols-3">
+          <ul className="grid gap-4 sm:gap-6 md:grid-cols-3">
             {productsPage.categories.map((category, i) => {
               const style = categoryStyle[category.id]
               return (
@@ -131,11 +131,11 @@ export default function ProductsPage() {
       </section>
 
       {sections.map((section, i) => (
-        <section key={section.id} id={section.id} className={cn('scroll-mt-24 py-20 lg:py-24', i % 2 === 0 && 'bg-sage')}>
+        <section key={section.id} id={section.id} className={cn('scroll-mt-24 py-14 sm:py-20 lg:py-24', i % 2 === 0 && 'bg-sage')}>
           <Container>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <SectionHeading title={section.title} intro={section.meta} />
-              <Button to={section.cta.to} variant="secondary" icon={ArrowRight} className="shrink-0 self-start sm:self-end">
+              <Button to={section.cta.to} variant="secondary" icon={ArrowRight} className="hidden shrink-0 self-start sm:inline-flex sm:self-end">
                 {section.cta.label}
               </Button>
             </div>
@@ -147,14 +147,18 @@ export default function ProductsPage() {
                 renderItem={(product) => <ProductCard product={product} />}
               />
             ) : (
-              <ul className={cn('mt-10 grid gap-6 sm:grid-cols-2', section.items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')}>
+              <ul className={cn('mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6', section.items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')}>
                 {section.items.map((product, j) => (
                   <Reveal as="li" key={product.slug} delay={j * 0.06}>
-                    <ProductCard product={product} />
+                    <ProductCard product={product} compact />
                   </Reveal>
                 ))}
               </ul>
             )}
+            {/* On phones the section link sits after the products, where the thumb already is. */}
+            <Button to={section.cta.to} variant="secondary" icon={ArrowRight} className="mt-6 w-full sm:hidden">
+              {section.cta.label}
+            </Button>
           </Container>
         </section>
       ))}

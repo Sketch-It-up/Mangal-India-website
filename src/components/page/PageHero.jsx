@@ -30,30 +30,30 @@ export default function PageHero({ route, eyebrow, intro, ctas = [], tone = 'lig
 
       <Container
         className={cn(
-          'relative grid items-center gap-12 pt-8 lg:gap-16',
+          'relative grid items-center gap-10 pt-6 sm:gap-12 sm:pt-8 lg:gap-16',
           visual && 'lg:grid-cols-12',
-          overlap ? 'pb-32 sm:pb-36 lg:pb-40' : tight ? 'pb-12 sm:pb-14' : 'pb-16 sm:pb-20 lg:pb-24',
+          overlap ? 'pb-32 sm:pb-36 lg:pb-40' : tight ? 'pb-10 sm:pb-14' : 'pb-12 sm:pb-20 lg:pb-24',
         )}
       >
         <div className={cn(visual ? 'lg:col-span-7' : 'max-w-4xl')}>
           <Breadcrumbs path={route.path} tone={dark ? 'dark' : 'light'} />
           {eyebrow && (
-            <p className={cn('mt-10 text-xs font-semibold uppercase tracking-[0.2em]', style.eyebrow)}>{eyebrow}</p>
+            <p className={cn('mt-7 text-xs font-semibold uppercase tracking-[0.2em] sm:mt-10', style.eyebrow)}>{eyebrow}</p>
           )}
           <h1
             className={cn(
               'text-h1 font-bold lg:text-[3.25rem] lg:leading-[1.08] xl:text-h1-lg',
-              eyebrow ? 'mt-4' : 'mt-10',
+              eyebrow ? 'mt-3 sm:mt-4' : 'mt-7 sm:mt-10',
               dark ? 'text-white' : 'text-forest',
             )}
           >
             {route.h1}
           </h1>
           {intro && (
-            <p className={cn('mt-6 max-w-2xl text-lg leading-relaxed', dark ? 'text-white/75' : 'text-ink-muted')}>{intro}</p>
+            <p className={cn('mt-4 max-w-2xl text-[17px] leading-relaxed sm:mt-6 sm:text-lg', dark ? 'text-white/75' : 'text-ink-muted')}>{intro}</p>
           )}
           {ctas.length > 0 && (
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
               {ctas.map((cta, i) => (
                 <Button
                   key={cta.label}
