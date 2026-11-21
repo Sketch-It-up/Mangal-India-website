@@ -21,11 +21,11 @@ export const site = {
   },
 
   contact: {
-    email: 'sspfarmerexpo@gmail.com',
+    email: 'mangalindia2@gmail.com',
     phone: '+91 73858 20580',
     // As supplied by the client. [CONFIRM: spelling of the society name]
     address: 'Flat No. A41, Shkarand Society, Opp. Natubag PMT Stop, Sahakar Nagar, Haveli, Pune 411009, India',
-    privacyEmail: 'sspfarmerexpo@gmail.com', // [CONFIRM: same inbox for privacy requests]
+    privacyEmail: 'mangalindia2@gmail.com', // [CONFIRM: same inbox for privacy requests]
   },
 
   social: [], // [CONFIRM: social media profile links]
@@ -39,5 +39,5 @@ export const stats = [
   { value: 400, suffix: '+', label: 'Containers Traded', line: 'More than 400 containers of premium produce handled to date.' },
   { value: 20, suffix: '+', label: 'Products', line: 'A wide range across fresh fruits, dry fruits and Indian exports, and growing.' },
   { value: 20, suffix: '', label: 'Sourcing Countries', line: 'Premium produce sourced from 20 countries across six continents.' },
-  { value: 10, suffix: '+', label: 'Distribution Centres in India', line: 'Backed by four wholesale market outlets and customers across India.' },
+  { value: 10, suffix: '+', label: 'Distribution Centres in India', line: 'Backed by four owned wholesale distribution outlets and customers across India.' },
 ]

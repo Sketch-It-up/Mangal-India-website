@@ -18,6 +18,6 @@ export const airExport = {
 
 export const dubaiShop = {
   offers: ['Premium fruits', 'Premium vegetables', 'Premium-quality dry fruits'],
-  address: null, // [CONFIRM: shop address]
+  address: null, // [CONFIRM: distribution center address]
   openingDate: null, // [CONFIRM: opening date]
 }

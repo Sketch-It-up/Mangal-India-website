@@ -62,13 +62,13 @@ export const importExport = {
   import: {
     label: 'Import',
     tag: 'The established engine',
-    text: 'Premium fresh fruits and dry fruits sourced from 20 countries and supplied to commercial buyers across India through 4 wholesale market outlets and 10+ distribution centres.',
+    text: 'Premium fresh fruits and dry fruits sourced from 20 countries and supplied to commercial buyers across India through 4 owned wholesale distribution outlets and 10+ distribution centres.',
     cta: { label: 'Explore Imports', to: '/products/' },
   },
   export: {
     label: 'Export',
     tag: 'The growth engine',
-    text: 'Premium Indian mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, plus rice, from a grower-exporter with over 100 acres of its own farming — beginning with Dubai, where Mangal India is set to open its own premium retail shop.',
+    text: 'Premium Indian mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, plus rice, from a grower-exporter with over 100 acres of its own farming — beginning with Dubai, where Mangal India is set to open its own Wholesale Distribution Center.',
     cta: { label: 'Explore Exports', to: '/exports/' },
   },
 }
@@ -91,8 +91,8 @@ export const portfolio = {
 }
 
 export const indiaNetwork = {
-  heading: 'Four wholesale markets. Ten-plus distribution centres. Customers across India.',
-  text: 'Mangal India serves India through wholesale market outlets in Mumbai, Chennai, Delhi and Bengaluru, supported by more than ten distribution centres. Our customers are spread across the country, in cities including Ahmedabad, Pune, Kochi, Kolkata and Jaipur.',
+  heading: 'Four owned wholesale outlets. Ten-plus distribution centres. Customers across India.',
+  text: 'Mangal India serves India through its owned wholesale distribution outlets in Mumbai, Chennai, Delhi and Bengaluru, supported by more than ten distribution centres. Our customers are spread across the country, in cities including Ahmedabad, Pune, Kochi, Kolkata and Jaipur.',
   cta: { label: 'View the India Network', to: '/global-network/india-distribution/' },
 }
 
@@ -118,11 +118,11 @@ export const exportsDubai = {
   heading: 'From India to the world — starting with Dubai.',
   paragraphs: [
     'Mangal India is now taking premium Indian produce to the world. As a grower-exporter with over 100 acres of our own farming, our export range includes mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, along with premium rice.',
-    'In Dubai, Mangal India is set to open its own premium retail shop, serving premium fruits, vegetables and premium-quality dry fruits to customers in the city.',
+    'In Dubai, Mangal India is set to open its own Wholesale Distribution Center, supplying premium fruits, vegetables and premium-quality dry fruits to trade buyers across the city.',
   ],
   ctas: [
     { label: 'Explore Exports', to: '/exports/' },
-    { label: 'See the Dubai Retail Shop', to: '/exports/dubai-retail-shop/' },
+    { label: 'See the Dubai Distribution Center', to: '/exports/dubai-wholesale-distribution/' },
   ],
 }
 

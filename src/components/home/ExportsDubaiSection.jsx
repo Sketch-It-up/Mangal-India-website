@@ -1,4 +1,4 @@
-import { ArrowRight, Store } from 'lucide-react'
+import { ArrowRight, Warehouse } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
@@ -57,12 +57,12 @@ export default function ExportsDubaiSection() {
           ))}
           <Reveal delay={0.24}>
             <Link
-              to="/exports/dubai-retail-shop/"
+              to="/exports/dubai-wholesale-distribution/"
               className="group flex h-full flex-col justify-between rounded-2xl bg-gold p-5 text-forest-dark transition hover:-translate-y-1 hover:shadow-lift"
             >
               <div>
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest text-gold">
-                  <Store aria-hidden="true" className="h-6 w-6" />
+                  <Warehouse aria-hidden="true" className="h-6 w-6" />
                 </span>
                 <Badge tone="forest" className="mt-4 bg-white/60">
                   Set to open
@@ -70,9 +70,9 @@ export default function ExportsDubaiSection() {
               </div>
               <div className="mt-6">
                 <p className="font-display text-xl font-bold">Mangal India Dubai</p>
-                <p className="mt-1 text-sm text-forest-dark/80">Premium fruits, vegetables and premium-quality dry fruits.</p>
+                <p className="mt-1 text-sm text-forest-dark/80">Wholesale Distribution Center in Dubai.</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold">
-                  See the shop <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  See the center <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>

@@ -14,7 +14,7 @@ import { dubaiShopPage } from '@/data/pages'
 import { routeByPath } from '@/data/routes'
 import { site } from '@/data/site'
 
-const route = routeByPath['/exports/dubai-retail-shop/']
+const route = routeByPath['/exports/dubai-wholesale-distribution/']
 
 const offerArt = [
   { types: ['cherries', 'oranges'], bg: 'bg-leaf-light' },
@@ -22,17 +22,17 @@ const offerArt = [
   { types: ['pistachios', 'dates'], bg: 'bg-tangerine-light' },
 ]
 
-// Illustrated shopfront standing in for renderings or photographs (Section 17, item 3).
+// Illustrated distribution-center front standing in for renderings or photographs (Section 17, item 3).
 function Shopfront() {
   return (
-    <div className="relative mx-auto w-full max-w-md" role="img" aria-label="Premium fruit display in a modern retail shop (illustrative image).">
+    <div className="relative mx-auto w-full max-w-md" role="img" aria-label="Premium fruit and dry fruit stock at the Mangal India Wholesale Distribution Center in Dubai (illustrative image).">
       <div className="overflow-hidden rounded-[2rem] bg-cream shadow-lift">
         <div className="bg-forest-dark px-6 py-4 text-center">
           <p className="font-display text-2xl font-bold text-white">
             {site.name}
             <span className="text-pomegranate">.</span>
           </p>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-gold">Dubai</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-gold">Wholesale Distribution · Dubai</p>
         </div>
         <div aria-hidden="true" className="h-8 bg-[repeating-linear-gradient(90deg,#F5B83D_0_28px,#1E4D2B_28px_56px)] [clip-path:polygon(0_0,100%_0,100%_60%,96%_100%,92%_60%,88%_100%,84%_60%,80%_100%,76%_60%,72%_100%,68%_60%,64%_100%,60%_60%,56%_100%,52%_60%,48%_100%,44%_60%,40%_100%,36%_60%,32%_100%,28%_60%,24%_100%,20%_60%,16%_100%,12%_60%,8%_100%,4%_60%,0_100%)]" />
         <div aria-hidden="true" className="grid grid-cols-3 gap-3 px-6 pb-6 pt-8">
@@ -51,7 +51,7 @@ function Shopfront() {
   )
 }
 
-// Mangal India Dubai (Section 9): announcement → what you will find → why Dubai → updates sign-up.
+// Mangal India Dubai, Wholesale Distribution Center (Section 9): announcement → what you will find → why Dubai → updates sign-up.
 export default function DubaiShopPage() {
   const page = dubaiShopPage
 
@@ -70,7 +70,7 @@ export default function DubaiShopPage() {
       {/* What you will find */}
       <section className="py-14 sm:py-20 lg:py-24">
         <Container>
-          <SectionHeading align="center" eyebrow="In store" title={page.offersHeading} />
+          <SectionHeading align="center" eyebrow="From our Dubai center" title={page.offersHeading} />
           <ul className="mt-8 grid gap-3 sm:mt-12 sm:gap-6 md:grid-cols-3">
             {dubaiShop.offers.map((offer, i) => (
               <Reveal as="li" key={offer} delay={i * 0.08}>
@@ -103,7 +103,7 @@ export default function DubaiShopPage() {
                 </span>
                 <div>
                   <dt className="font-semibold text-forest">Address</dt>
-                  <dd className="mt-1 text-ink-muted">{dubaiShop.address ?? <Tbc label="shop address" />}</dd>
+                  <dd className="mt-1 text-ink-muted">{dubaiShop.address ?? <Tbc label="center address" />}</dd>
                 </div>
               </div>
               <div className="flex items-start gap-4">

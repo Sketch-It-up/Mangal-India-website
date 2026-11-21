@@ -3,6 +3,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/exports/dubai-retail-shop/", "destination": "/exports/dubai-wholesale-distribution/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

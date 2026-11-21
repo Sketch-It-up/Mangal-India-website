@@ -1,7 +1,7 @@
 import ProductCategoryPage from './ProductCategoryPage'
 import { dryFruitCountries } from '@/data/countries'
 import { dryFruitsPage } from '@/data/pages'
-import { dryFruits } from '@/data/products'
+import { dryFruitGroups, dryFruits } from '@/data/products'
 import { routeByPath } from '@/data/routes'
 
 const related = [
@@ -19,9 +19,10 @@ export default function DryFruitsPage() {
       eyebrow="Dry Fruits"
       content={dryFruitsPage}
       products={dryFruits}
+      groups={dryFruitGroups}
       countries={dryFruitCountries}
       countriesLabel={`Sourced from ${dryFruitCountries.length} countries`}
-      gridHeading="Our four premium dry fruits"
+      gridHeading="Our premium dry fruits, nuts and seeds"
       related={related}
     />
   )

@@ -67,18 +67,49 @@ export const dryFruits = [
   { slug: 'pistachios', name: 'Pistachios', line: 'Premium pistachios for wholesale, repack and gifting buyers.' },
   { slug: 'almonds', name: 'Almonds', line: 'Premium almonds — a core dry-fruit line for every kind of buyer.' },
   { slug: 'walnuts', name: 'Walnuts', line: 'Premium walnuts for wholesale, repack and institutional demand.' },
-].map((product) => ({
+  // Change request round 2: shown as one card until the client confirms which seeds to list.
+  // [CONFIRM: which dried seeds to list]
+  {
+    slug: 'dried-seeds',
+    name: 'Dried Seeds',
+    line: 'Premium dried seeds for wholesale and repack buyers. Tell us what you need and we will confirm availability.',
+    group: 'seeds',
+    photo: false,
+  },
+].map(({ photo, group = 'nuts', ...product }) => ({
   ...product,
+  group,
   category: 'dry',
   art: product.slug,
-  image: imagePath(product.slug),
+  image: photo === false ? null : imagePath(product.slug),
   alt: `${product.name} premium quality (illustrative image).`,
 }))
+
+// Dry Fruits page sub-categories (change request round 2). [CONFIRM: further dry fruits and nuts to list]
+export const dryFruitGroups = [
+  { id: 'nuts', title: 'Dry Fruits and Nuts', note: 'Our core dry-fruit and nut lines, sourced by origin.' },
+  { id: 'seeds', title: 'Dried Seeds', note: 'Premium dried seeds for wholesale and repack buyers.' },
+].map((group) => ({ ...group, products: dryFruits.filter((product) => product.group === group.id) }))
 
 export const allProducts = [...freshFruits, ...dryFruits]
 
 // Indian produce exported by Mangal India, in the client's order, with rice from the original range.
-export const exportRange = ['Mangoes', 'Bananas', 'Onions', 'Pomegranates', 'Grapes', 'Chillies', 'Fresh Vegetables', 'Rice']
+export const exportRange = ['Mangoes', 'Bananas', 'Onions', 'Pomegranates', 'Grapes', 'Chillies', 'Fresh Vegetables', 'Rice', 'Coffee Beans', 'Turmeric', 'Cardamom']
+
+// Spices and plantation crops for export (change request round 2), grouped under their own
+// "Spices & Coffee" heading on the Exports page. Names only, no prices.
+// [CONFIRM: turmeric type — dried finger, powder or both; product photos]
+export const spiceExports = [
+  { slug: 'coffee-beans', name: 'Coffee Beans', line: 'Indian coffee beans for roasters, importers and distributors.' },
+  { slug: 'turmeric', name: 'Turmeric', line: 'Indian turmeric, a staple spice for importers and food manufacturers.' },
+  { slug: 'cardamom', name: 'Cardamom', line: 'Aromatic Indian cardamom for spice importers and repackers.' },
+].map((product) => ({
+  ...product,
+  category: 'export',
+  art: product.slug,
+  image: null,
+  alt: `${product.name} (illustrative image).`,
+}))
 
 // Export range as cards (lines from the Exports page, Section 9).
 export const exportItems = [
@@ -102,3 +133,6 @@ export const exportItems = [
   image: imagePath(product.slug),
   alt: `${product.name} (illustrative image).`,
 }))
+
+// Every export card: produce and rice first, then spices and coffee.
+export const allExportItems = [...exportItems, ...spiceExports]

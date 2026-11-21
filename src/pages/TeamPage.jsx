@@ -64,7 +64,12 @@ export default function TeamPage() {
                     <h3 className={cn('mt-1.5 font-display font-semibold leading-tight text-forest sm:mt-2 sm:text-2xl lg:text-lg xl:text-xl', i === 0 ? 'text-2xl' : 'text-lg')}>
                       {member.name}
                     </h3>
-                    <p className={cn('mt-1 text-[13px] leading-snug text-ink-muted sm:text-sm', i !== 0 && 'flex-1')}>{member.role}</p>
+                    <p className={cn('mt-1 text-[13px] leading-snug text-ink-muted sm:text-sm', i !== 0 && !member.credential && 'flex-1')}>{member.role}</p>
+                    {member.credential && (
+                      <p className={cn('mt-2 border-t border-forest/10 pt-2 text-[13px] font-semibold leading-snug text-forest sm:text-sm', i !== 0 && 'flex-1')}>
+                        {member.credential}
+                      </p>
+                    )}
                     {member.to && (
                       <Link to={member.to} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-leaf-dark hover:underline lg:mt-4 lg:text-[13px]">
                         Read the Founder’s Message

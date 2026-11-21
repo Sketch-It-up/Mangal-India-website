@@ -8,7 +8,14 @@ import { customerCities, wholesaleOutlets } from '@/data/network'
 const WIDTH = 420
 const HEIGHT = 470
 
-// India outline (official boundaries) with the four wholesale outlets and five customer cities.
+const listNames = (cities) => {
+  const names = cities.map((city) => city.name)
+  return names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names.at(-1)}` : names.join('')
+}
+
+const mapLabel = `Map of India marking owned wholesale distribution outlets in ${listNames(wholesaleOutlets)}, and customer cities ${listNames(customerCities)}.`
+
+// India outline (official boundaries) with the owned wholesale outlets and customer cities (src/data/network.js).
 export default function IndiaMap({ className }) {
   const uid = useId().replace(/:/g, '')
   const clipId = `india-clip-${uid}`
@@ -37,7 +44,7 @@ export default function IndiaMap({ className }) {
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
       className={cn('h-auto w-full', className)}
       role="img"
-      aria-label="Map of India marking Mumbai, Chennai, Delhi and Bengaluru wholesale outlets and customer cities Ahmedabad, Pune, Kochi, Kolkata and Jaipur."
+      aria-label={mapLabel}
     >
       <defs>
         <clipPath id={clipId}>

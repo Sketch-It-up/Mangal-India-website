@@ -19,7 +19,7 @@ const products = [
 
 const related = [
   { label: 'All Exports', to: '/exports/' },
-  { label: 'Dubai Retail Shop', to: '/exports/dubai-retail-shop/' },
+  { label: 'Dubai Wholesale Distribution', to: '/exports/dubai-wholesale-distribution/' },
   { label: 'International Buyers', to: '/trade-with-us/international-buyers/' },
   { label: 'Contact', to: '/contact/' },
 ]

@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo } from 'react'
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion'
 import { geoGraticule10, geoOrthographic, geoPath } from 'd3-geo'
-import { Globe, Store } from 'lucide-react'
+import { Globe, Warehouse } from 'lucide-react'
 import ProduceArt from '@/components/art/ProduceArt'
 import { indiaFeature, useWorldFeatures } from '@/lib/geo'
 import { india, sourcingCountries } from '@/data/countries'
@@ -158,10 +158,10 @@ export default function HeroVisual({ className = 'max-w-[360px] sm:max-w-[460px]
           dark ? 'border border-white/20 bg-white/10 backdrop-blur-md' : 'bg-forest',
         )}
       >
-        <Store aria-hidden="true" className="h-4 w-4 text-gold" />
+        <Warehouse aria-hidden="true" className="h-4 w-4 text-gold" />
         <span className="text-xs font-semibold leading-tight">
           Exporting to Dubai
-          <span className="block font-normal text-white/70">Own premium retail shop</span>
+          <span className="block font-normal text-white/70">Wholesale Distribution Center</span>
         </span>
       </motion.div>
     </div>

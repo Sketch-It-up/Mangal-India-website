@@ -340,7 +340,96 @@ function Generic() {
   )
 }
 
+// Spices & Coffee and Dried Seeds (change request round 2), until product photos arrive.
+function CoffeeBeans() {
+  const beans = [
+    [40, 70, -30],
+    [62, 60, 15],
+    [82, 74, 50],
+    [56, 84, -70],
+  ]
+  return (
+    <>
+      <Shadow rx={36} />
+      {beans.map(([x, y, a]) => (
+        <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${a})`}>
+          <ellipse rx="13" ry="17" fill="#5B3A1E" />
+          <path d="M0-17a13 17 0 0 1 0 34z" fill="#3E2612" opacity=".35" />
+          <path d="M0-15c-5 6 5 12 0 30" stroke="#2A170A" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+          <ellipse cx="-6" cy="-6" rx="2.2" ry="5" fill="#fff" opacity=".18" />
+        </g>
+      ))}
+    </>
+  )
+}
+
+function Turmeric() {
+  return (
+    <>
+      <Shadow rx={38} />
+      {/* Dried fingers */}
+      <g fill="#C98A1B">
+        <path d="M24 74c6-10 22-14 36-10 4 1 4 6 0 7-12 3-24 6-31 10-4 2-7-3-5-7z" />
+        <path d="M54 66c8-8 20-12 30-9 3 1 3 5 0 6-9 2-18 6-25 10-4 2-8-3-5-7z" />
+        <path d="M44 71c-2-9 2-18 8-24 2-2 6 0 5 3-3 7-5 14-4 21 0 4-8 4-9 0z" />
+      </g>
+      <g stroke="#9A6610" strokeWidth="1.2" strokeLinecap="round" opacity=".6" fill="none">
+        <path d="M34 72l3 3M44 69l2 3M66 63l2 3M76 60l2 3M50 56l3 1" />
+      </g>
+      {/* Powder mound */}
+      <path d="M58 100c4-14 14-20 22-20s18 6 22 20z" fill="#F2B21B" />
+      <path d="M80 80c8 0 18 6 22 20H80z" fill="#D9970F" opacity=".45" />
+      <ellipse cx="74" cy="88" rx="3" ry="5" fill="#fff" opacity=".3" />
+    </>
+  )
+}
+
+function Cardamom() {
+  const pods = [
+    [42, 72, -40],
+    [62, 62, 0],
+    [80, 74, 40],
+    [60, 86, 90],
+  ]
+  return (
+    <>
+      <Shadow rx={36} />
+      {pods.map(([x, y, a]) => (
+        <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${a})`}>
+          <path d="M0-20C10-14 11 8 0 20-11 8-10-14 0-20z" fill="#8DB045" />
+          <path d="M0-20C10-14 11 8 0 20z" fill="#5E8A2A" opacity=".35" />
+          <path d="M0-18v36M-5-12c2 8 2 16 0 24M5-12c-2 8-2 16 0 24" stroke="#4F7A22" strokeWidth="1" fill="none" opacity=".45" />
+          <path d="M0-20l-1.5-4h3z" fill="#6B8E2E" />
+          <ellipse cx="-4" cy="-5" rx="1.8" ry="6" fill="#fff" opacity=".28" />
+        </g>
+      ))}
+    </>
+  )
+}
+
+function DriedSeeds() {
+  const seeds = [
+    [36, 78, '#E9DFC7', -20], [48, 70, '#3B3B36', 30], [60, 80, '#E9DFC7', 10], [72, 70, '#6E8B3D', -35],
+    [84, 80, '#3B3B36', 20], [44, 88, '#6E8B3D', 60], [56, 92, '#3B3B36', -10], [68, 90, '#E9DFC7', 40],
+    [80, 92, '#6E8B3D', -50], [54, 60, '#E9DFC7', -60], [66, 58, '#6E8B3D', 15], [42, 62, '#3B3B36', 70],
+  ]
+  return (
+    <>
+      <Shadow rx={38} />
+      <path d="M20 84c0-18 18-30 40-30s40 12 40 30c0 10-18 18-40 18s-40-8-40-18z" fill="#C89F6A" />
+      <path d="M20 84c0 10 18 18 40 18s40-8 40-18c-4 6-20 11-40 11s-36-5-40-11z" fill="#9C7442" />
+      {seeds.map(([x, y, fill, a]) => (
+        <ellipse key={`${x}-${y}`} cx={x} cy={y - 10} rx="3.6" ry="6" fill={fill} transform={`rotate(${a} ${x} ${y - 10})`} />
+      ))}
+    </>
+  )
+}
+
 const arts = {
+  'coffee-beans': CoffeeBeans,
+  turmeric: Turmeric,
+  cardamom: Cardamom,
+  'dried-seeds': DriedSeeds,
   apples: Apples,
   oranges: Oranges,
   mandarins: Mandarins,

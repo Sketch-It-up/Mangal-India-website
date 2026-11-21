@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { ArrowUpRight, Building2, Globe, Mail, MapPin, MessageSquare, Phone, Sprout, Store } from 'lucide-react'
+import { ArrowUpRight, Building2, Globe, Mail, MapPin, MessageSquare, Phone, Sprout, Warehouse } from 'lucide-react'
 import EnquiryForm from '@/components/forms/EnquiryForm'
 import PageHero from '@/components/page/PageHero'
 import Seo from '@/components/seo/Seo'
@@ -22,7 +22,7 @@ const typeIcons = {
   'international-buyer': Globe,
   supplier: Sprout,
   other: MessageSquare,
-  'dubai-shop': Store,
+  'dubai-shop': Warehouse,
 }
 
 const direct = [
