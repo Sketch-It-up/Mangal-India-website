@@ -17,12 +17,13 @@ export const importProducts = [
   'Apples', 'Pears', 'Oranges', 'Kiwi', 'Mandarins', 'Dragon Fruit', 'Cherries',
   'Thai Mangoes', 'Coconuts', 'Mangosteen', 'Rambutan', 'Durian', 'Tamarind',
   'Plums', 'Blueberries', 'Avocados', 'Nectarines', 'Peaches', 'Persimmons',
-  'Dates', 'Pistachios', 'Almonds', 'Walnuts', 'Other',
+  'Dates', 'Pistachios', 'Almonds', 'Walnuts', 'Dried Seeds', 'Other',
 ]
 
 export const exportProducts = [
   'Mangoes', 'Bananas', 'Onions', 'Pomegranates', 'Grapes', 'Chillies', 'Vegetables',
-  'Basmati', '1121', 'Non-basmati', 'Sona Masoori', 'Other rice', 'Other',
+  'Basmati', '1121', 'Non-basmati', 'Sona Masoori', 'Other rice',
+  'Coffee Beans', 'Turmeric', 'Cardamom', 'Other',
 ]
 
 // Keyed by enquiry type. `routing` is the desk each form goes to (Section 13, Processing).
@@ -92,9 +93,9 @@ export const forms = {
   },
   'dubai-shop': {
     code: 'D',
-    label: 'Dubai shop updates',
+    label: 'Dubai distribution center updates',
     routing: 'marketing',
-    submitLabel: 'Get Shop Updates',
+    submitLabel: 'Get Dubai Updates',
     fields: [
       { name: 'name', label: 'Name', type: 'text', required: true, autoComplete: 'name', half: true },
       { name: 'email', label: 'Email', type: 'email', required: true, autoComplete: 'email', half: true },

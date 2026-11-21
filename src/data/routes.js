@@ -31,7 +31,7 @@ export const routes = [
     name: 'Our Team',
     title: 'Our Team | Leadership | Mangal India',
     description:
-      'Meet the team behind Mangal India: leadership across technology, accounts, operations, marketing and retail, led by CEO Saikrushna Warghude.',
+      'Meet the team behind Mangal India: leadership across technology, accounts, operations and sales, led by CEO Saikrushna Warghude.',
     h1: 'The team behind Mangal India.',
   },
   {
@@ -72,7 +72,7 @@ export const routes = [
     title: 'India Distribution Network | Mangal India',
     description:
       'Mangal India supplies India through wholesale outlets in Mumbai, Chennai, Delhi and Bengaluru, 10+ distribution centres and customers across the country.',
-    h1: 'Four wholesale markets. Ten-plus distribution centres. All of India.',
+    h1: 'Four owned wholesale outlets. Ten-plus distribution centres. All of India.',
   },
   {
     path: '/global-network/global-offices/',
@@ -115,11 +115,11 @@ export const routes = [
     h1: 'Premium mangoes and fresh vegetables, flown fresh.',
   },
   {
-    path: '/exports/dubai-retail-shop/',
-    name: 'Dubai Retail Shop',
-    title: 'Mangal India Dubai | Premium Fruit & Dry Fruit Shop',
+    path: '/exports/dubai-wholesale-distribution/',
+    name: 'Dubai Wholesale Distribution',
+    title: 'Mangal India Dubai | Wholesale Distribution Center',
     description:
-      'Mangal India is set to open its own premium retail shop in Dubai, serving premium fruits, vegetables and premium-quality dry fruits.',
+      'Mangal India is set to open its Wholesale Distribution Center in Dubai, supplying premium fruits, vegetables and dry fruits to trade buyers.',
     h1: 'Mangal India is coming to Dubai.',
   },
   {
@@ -151,7 +151,7 @@ export const routes = [
     name: 'Contact',
     title: 'Contact Mangal India | Business Enquiries',
     description:
-      'Contact Mangal India for wholesale supply, exports, the Dubai shop or supplier introductions. Choose your enquiry type and send details.',
+      'Contact Mangal India for wholesale supply, exports, Dubai wholesale distribution or supplier introductions. Choose your enquiry type and send details.',
     h1: 'Start a trade enquiry.',
   },
   {
@@ -159,7 +159,7 @@ export const routes = [
     name: 'FAQs',
     title: 'FAQs | Mangal India',
     description:
-      'Answers about Mangal India: what we trade, where we source, our India network, our exports and the Dubai shop.',
+      'Answers about Mangal India: what we trade, where we source, our India network, our exports and our Dubai distribution center.',
     h1: 'Frequently asked questions.',
   },
   {

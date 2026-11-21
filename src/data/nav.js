@@ -13,7 +13,7 @@ import {
   Quote,
   Ship,
   Sprout,
-  Store,
+  Warehouse,
   Tractor,
   Users,
   Wheat,
@@ -51,7 +51,7 @@ export const primaryNav = [
       { label: 'Farming Venture', to: '/farming-venture/', description: 'Our own farms, 100+ acres', icon: Tractor, badge: 'New' },
       { label: 'Rice', to: '/exports/rice/', description: 'Basmati, 1121, Sona Masoori and more', icon: Wheat },
       { label: 'Mangoes & Vegetables', to: '/exports/mangoes-and-vegetables/', description: 'Fresh produce by air', icon: Plane },
-      { label: 'Dubai Retail Shop', to: '/exports/dubai-retail-shop/', description: 'Our own premium shop', icon: Store },
+      { label: 'Dubai Wholesale Distribution', to: '/exports/dubai-wholesale-distribution/', description: 'Wholesale Distribution Center in Dubai', icon: Warehouse },
     ],
   },
   {
@@ -76,7 +76,7 @@ export const featuredPages = [
   {
     label: 'Our Team',
     to: '/about/our-team/',
-    text: 'The people leading technology, accounts, operations, marketing and retail at Mangal India.',
+    text: 'The people leading technology, accounts, operations and sales at Mangal India.',
     cta: 'Meet the Team',
     icon: Users,
   },
@@ -118,7 +118,7 @@ export const footerNav = [
       { label: 'Farming Venture', to: '/farming-venture/' },
       { label: 'Rice', to: '/exports/rice/' },
       { label: 'Mangoes & Vegetables', to: '/exports/mangoes-and-vegetables/' },
-      { label: 'Dubai Retail Shop', to: '/exports/dubai-retail-shop/' },
+      { label: 'Dubai Wholesale Distribution', to: '/exports/dubai-wholesale-distribution/' },
     ],
   },
   {

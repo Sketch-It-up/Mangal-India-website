@@ -5,10 +5,13 @@ const exportPrefill = {
   rice: {}, // the buyer picks the variety
   mangoes: { product: 'Mangoes' },
   vegetables: { product: 'Vegetables' },
+  'coffee-beans': { product: 'Coffee Beans' },
+  turmeric: { product: 'Turmeric' },
+  cardamom: { product: 'Cardamom' },
 }
 
 // Reads ?product=<slug> and ?type=<enquiry type> from enquiry links
-// (product cards, "Request Specifications", "Get Shop Updates") to pre-fill a form.
+// (product cards, "Request Specifications", "Get Dubai Updates") to pre-fill a form.
 export function prefillFromQuery(params) {
   const slug = params.get('product')
   const requestedType = params.get('type')

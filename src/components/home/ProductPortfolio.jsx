@@ -6,14 +6,14 @@ import Carousel from '@/components/ui/Carousel'
 import Chip from '@/components/ui/Chip'
 import Container from '@/components/ui/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { dryFruits, exportItems, exportRange, freshFruits } from '@/data/products'
+import { allExportItems, dryFruits, exportRange, freshFruits } from '@/data/products'
 import { portfolio } from '@/data/home'
 
 const filters = [
-  { id: 'all', label: 'All Products', icon: LayoutGrid, items: [...freshFruits, ...dryFruits, ...exportItems] },
+  { id: 'all', label: 'All Products', icon: LayoutGrid, items: [...freshFruits, ...dryFruits, ...allExportItems] },
   { id: 'fresh', label: 'Fresh Fruits', icon: Apple, items: freshFruits },
   { id: 'dry', label: 'Dry Fruits', icon: Nut, items: dryFruits },
-  { id: 'export', label: 'Export Range', icon: Ship, items: exportItems },
+  { id: 'export', label: 'Export Range', icon: Ship, items: allExportItems },
 ]
 
 const summary = [

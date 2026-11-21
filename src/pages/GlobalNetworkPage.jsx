@@ -121,8 +121,8 @@ export default function GlobalNetworkPage() {
                   <Link to="/exports/" className="inline-flex items-center gap-2 hover:underline">
                     Exports <ArrowRight aria-hidden="true" className="h-4 w-4" />
                   </Link>
-                  <Link to="/exports/dubai-retail-shop/" className="inline-flex items-center gap-2 hover:underline">
-                    Dubai Retail Shop <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                  <Link to="/exports/dubai-wholesale-distribution/" className="inline-flex items-center gap-2 hover:underline">
+                    Dubai Wholesale Distribution <ArrowRight aria-hidden="true" className="h-4 w-4" />
                   </Link>
                 </div>
               </div>

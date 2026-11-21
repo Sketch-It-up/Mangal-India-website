@@ -19,15 +19,15 @@ export const faqs = [
   },
   {
     q: 'Where do you supply in India?',
-    a: 'Through wholesale market outlets in Mumbai, Chennai, Delhi and Bengaluru, more than ten distribution centres and customers across India, including Ahmedabad, Pune, Kochi, Kolkata and Jaipur.',
+    a: 'Through our owned wholesale distribution outlets in Mumbai, Chennai, Delhi and Bengaluru, more than ten distribution centres and customers across India, including Ahmedabad, Pune, Kochi, Kolkata and Jaipur.',
   },
   {
     q: 'What do you export?',
     a: 'Premium Indian mangoes, bananas, onions, pomegranates, grapes, chillies and fresh vegetables, much of it grown on our own farms, plus basmati, 1121, non-basmati and Sona Masoori rice. Exports begin with Dubai.',
   },
   {
-    q: 'Is there a Mangal India shop in Dubai?',
-    a: 'Mangal India is set to open its own premium retail shop in Dubai, serving premium fruits, vegetables and dry fruits.',
+    q: 'Does Mangal India have a base in Dubai?',
+    a: 'Mangal India is set to open its own Wholesale Distribution Center in Dubai, supplying premium fruits, vegetables and dry fruits to trade buyers.',
   },
   {
     q: 'Do you publish prices?',

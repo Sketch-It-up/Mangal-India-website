@@ -15,8 +15,40 @@
     <!-- Per-page SEO tags: scripts/postbuild.mjs rewrites these for every route; data-rh lets
          react-helmet-async take them over in the browser. -->
     <meta name="description" content="Mangal India is a leading importer and exporter of premium fresh and dry fruits, sourcing from 20 countries and supplying buyers across India and Dubai." data-rh="true" />
+    <!-- Intro splash: hidden unless public/intro.js adds the `intro` class (first load of a session,
+         motion allowed). The CSS fades it out by itself at ~1.4 s, so it can never stay on screen. -->
+    <style>
+      #intro { display: none; }
+      .intro #intro {
+        position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center;
+        background: #1E4D2B; color: #fff; cursor: pointer; text-align: center;
+        animation: intro-out 0.35s cubic-bezier(0.65, 0, 0.35, 1) 1.05s forwards;
+      }
+      .intro-skip #intro { animation: intro-out 0.2s ease forwards; }
+      #intro .intro-mark { animation: intro-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      #intro .intro-name {
+        display: block; font: 700 clamp(40px, 9vw, 72px)/1 Fraunces, Georgia, serif; letter-spacing: -0.02em;
+      }
+      #intro .intro-dot {
+        display: inline-block; width: 0.2em; height: 0.2em; margin-left: 0.05em; border-radius: 50%; background: #C62839;
+      }
+      #intro .intro-sub {
+        display: block; margin-top: 0.9em; font: 600 clamp(11px, 2.4vw, 14px)/1 Inter, system-ui, sans-serif;
+        letter-spacing: 0.3em; text-transform: uppercase; color: #F5B83D;
+      }
+      @keyframes intro-in { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+      @keyframes intro-out { to { opacity: 0; visibility: hidden; transform: translateY(-2%); } }
+      @media (prefers-reduced-motion: reduce) { #intro { display: none !important; } }
+    </style>
+    <script src="/intro.js"></script>
   </head>
   <body>
+    <div id="intro" aria-hidden="true">
+      <div class="intro-mark">
+        <span class="intro-name">Mangal India<span class="intro-dot"></span></span>
+        <span class="intro-sub">Importer &amp; Exporter</span>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

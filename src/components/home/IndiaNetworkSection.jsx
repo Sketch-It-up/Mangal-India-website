@@ -15,10 +15,10 @@ export default function IndiaNetworkSection() {
         <div>
           <SectionHeading eyebrow="India Network" title={indiaNetwork.heading} intro={indiaNetwork.text} />
 
-          <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4">
+          <div className="mt-7 grid gap-3 sm:mt-10 sm:gap-4">
             <div className="rounded-2xl bg-white p-4 shadow-card sm:p-6">
-              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">Wholesale market outlets</h3>
-              <ul className="mt-4 space-y-2.5">
+              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">Owned wholesale distribution outlets</h3>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-4">
                 {wholesaleOutlets.map((city) => (
                   <li key={city.id} className="flex items-center gap-2.5 font-display text-base font-semibold text-forest sm:gap-3 sm:text-lg">
                     <span aria-hidden="true" className="h-3 w-3 rounded-full bg-forest ring-4 ring-leaf/30" />
@@ -28,8 +28,10 @@ export default function IndiaNetworkSection() {
               </ul>
             </div>
             <div className="rounded-2xl bg-white p-4 shadow-card sm:p-6">
-              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">Pan-India customers</h3>
-              <ul className="mt-4 space-y-2.5">
+              <h3 className="font-sans text-[11px] font-semibold uppercase leading-snug tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.16em]">
+                Pan-India customers · {customerCities.length} cities
+              </h3>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3">
                 {customerCities.map((city) => (
                   <li key={city.id} className="flex items-center gap-2.5 text-[15px] font-medium text-ink sm:gap-3 sm:text-[17px]">
                     <span aria-hidden="true" className="h-3 w-3 rounded-full border-[2.5px] border-tangerine-dark" />
@@ -61,7 +63,7 @@ export default function IndiaNetworkSection() {
           <ul className="relative mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink-muted">
             <li className="flex items-center gap-2">
               <span aria-hidden="true" className="h-3 w-3 rounded-full bg-forest" />
-              Wholesale market outlet
+              Owned wholesale distribution outlet
             </li>
             <li className="flex items-center gap-2">
               <span aria-hidden="true" className="h-3 w-3 rounded-full border-[2.5px] border-tangerine-dark bg-white" />

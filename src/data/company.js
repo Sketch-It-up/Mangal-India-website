@@ -47,18 +47,20 @@ export const officesPage = {
   secondaryCta: { label: 'Explore the Global Map', to: '/global-network/' },
 }
 
-// [CONFIRM: portraits and short bios for each team member]
+// Team (change request round 2, 18 Nov 2026). Portraits kept as supplied, at the client's request.
+// `credential`: one line of experience or education; null hides the line until it is confirmed.
+// [CONFIRM: Saikrushna's line; "15 years" or "15+ years"]
 export const team = [
-  { name: 'Saikrushna Warghude', title: 'CEO', role: 'Founder, Managing Director & CEO', portrait: '/images/founder.jpg', to: '/about/founder-message/' },
-  { name: 'Nikhil Shelke', title: 'CTO', role: 'Chief Technology Officer', portrait: '/images/team/nikhil-shelke.jpg' },
-  { name: 'Pandurang Ped', title: 'Head of Operations', role: 'Sourcing, shipments & distribution', portrait: '/images/coo.jpg' },
-  { name: 'Anand Singh', title: 'Head of Accounts', role: 'Accounts & finance', portrait: '/images/team/anand-singh.jpg' },
-  { name: 'Sanket Pharate', title: 'Head of Marketing & Retail', role: 'Marketing, retail & buyer relationships', portrait: '/images/team/sanket-pharate.jpg' },
+  { name: 'Saikrushna Warghude', title: 'CEO', role: 'Founder, Managing Director & CEO', credential: null, portrait: '/images/founder.jpg', to: '/about/founder-message/' },
+  { name: 'Nikhil Shelke', title: 'CTO', role: 'Chief Technology Officer', credential: 'MBA, IIM Ahmedabad', portrait: '/images/team/nikhil-shelke.jpg' },
+  { name: 'Anand Singh', title: 'Head – Accounts', role: 'Accounts & finance', credential: '15 years of experience', portrait: '/images/team/anand-singh.jpg' },
+  { name: 'Pandurang Ped', title: 'Head – Operations', role: 'Sourcing, shipments & distribution', credential: '12 years of experience', portrait: '/images/coo.jpg' },
+  { name: 'Sanket Pharate', title: 'Head – Sales', role: 'Sales & buyer relationships', credential: 'MBA', portrait: '/images/team/sanket-pharate.jpg' },
 ]
 
 export const teamPage = {
   intro:
-    'Mangal India is run by a hands-on team covering technology, accounts, operations, marketing and retail, led by our founder and CEO, Saikrushna Warghude.',
+    'Mangal India is run by a hands-on team covering technology, accounts, operations and sales, led by our founder and CEO, Saikrushna Warghude.',
   heading: 'Leadership team',
   cta: { label: 'Start a Conversation', to: '/contact/' },
   secondaryCta: { label: 'Read the Founder’s Message', to: '/about/founder-message/' },

@@ -32,7 +32,7 @@ export default function IndiaDistributionPage() {
             <ul className="relative mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink-muted">
               <li className="flex items-center gap-2">
                 <span aria-hidden="true" className="h-3 w-3 rounded-full bg-forest" />
-                Wholesale market outlet
+                Owned wholesale distribution outlet
               </li>
               <li className="flex items-center gap-2">
                 <span aria-hidden="true" className="h-3 w-3 rounded-full border-[2.5px] border-tangerine-dark bg-white" />
@@ -43,10 +43,10 @@ export default function IndiaDistributionPage() {
         }
       />
 
-      {/* Four wholesale market outlets */}
+      {/* Owned wholesale distribution outlets */}
       <section className="bg-forest py-20 text-white lg:py-24">
         <Container>
-          <SectionHeading tone="dark" eyebrow={`${wholesaleOutlets.length} outlets`} title="Wholesale market outlets" />
+          <SectionHeading tone="dark" eyebrow={`${wholesaleOutlets.length} outlets`} title="Owned Wholesale Distribution Outlets" />
           <ul className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {wholesaleOutlets.map((city, i) => (
               <Reveal as="li" key={city.id} delay={i * 0.08}>

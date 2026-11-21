@@ -320,7 +320,7 @@ export default function WorldMap({ className }) {
                   animate={drawn ? { opacity: 1, y: 0 } : undefined}
                   transition={{ delay: outboundDelay + 0.6 }}
                 >
-                  Fruits · Vegetables · Rice · Premium Retail Shop
+                  Fruits · Vegetables · Rice · Wholesale Distribution
                 </motion.span>
               </div>
             </div>

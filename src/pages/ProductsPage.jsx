@@ -15,7 +15,7 @@ import { cn } from '@/lib/cn'
 import { itemListSchema } from '@/lib/schema'
 import { dryFruitCountries, freshFruitCountries } from '@/data/countries'
 import { productsPage } from '@/data/pages'
-import { dryFruits, exportItems, freshFruits } from '@/data/products'
+import { allExportItems, dryFruits, freshFruits } from '@/data/products'
 import { routeByPath } from '@/data/routes'
 import { site } from '@/data/site'
 
@@ -58,8 +58,8 @@ const sections = [
   {
     id: 'export',
     title: 'Export Range',
-    meta: 'Fruits, vegetables and rice from India',
-    items: exportItems,
+    meta: 'Fruits, vegetables, rice, spices and coffee from India',
+    items: allExportItems,
     cta: { label: 'Explore Exports', to: '/exports/' },
   },
 ]
